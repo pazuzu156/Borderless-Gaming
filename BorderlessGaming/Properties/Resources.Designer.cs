@@ -148,16 +148,6 @@ namespace BorderlessGaming.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap master_glyph {
-            get {
-                object obj = ResourceManager.GetObject("master_glyph", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap remove {
             get {
                 object obj = ResourceManager.GetObject("remove", resourceCulture);

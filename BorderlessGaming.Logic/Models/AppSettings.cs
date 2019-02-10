@@ -38,9 +38,6 @@ namespace BorderlessGaming.Logic.Models
         public bool CheckForUpdates { get; set; } = true;
 
         [ProtoMember(11)]
-        public bool DisableSteamIntegration { get; set; }
-
-        [ProtoMember(12)]
         [DefaultValue("en-US")]
         public string DefaultCulture { get; set; } = "en-US";
 
