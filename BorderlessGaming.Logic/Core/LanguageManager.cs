@@ -14,7 +14,6 @@ namespace BorderlessGaming.Logic.Core
 {
     public class LanguageManager
     {
-
         public static string CurrentCulture { get; set; }
 
         private static readonly HashSet<string> CultureNames = CreateCultureNames();
@@ -32,6 +31,53 @@ namespace BorderlessGaming.Logic.Core
             allNames.UnionWith(cultureInfos.Select(x => x.TwoLetterISOLanguageName));
             allNames.UnionWith(cultureInfos.Select(x => x.Name));
             return allNames;
+        }
+
+        public static void Init(Control.ControlCollection controls, List<string> controlNames)
+        {
+            foreach (Control control in controls.OfType<Control>())
+            {
+                TranslateControl(control, controlNames);
+            }
+        }
+
+        private static void TranslateControl(Control control, List<string> controlNames)
+        {
+            if (controlNames.Contains(control.Name))
+            {
+                control.Text = Data(control.Name);
+            }
+
+            foreach (Control c in control.Controls)
+            {
+                TranslateControl(c, controlNames);
+            }
+
+            ToolStrip toolStrip = control as ToolStrip;
+            if (toolStrip != null)
+            {
+                foreach (ToolStripItem t in toolStrip.Items)
+                {
+                    TranslateToolStripItem(t, controlNames);
+                }
+            }
+        }
+
+        private static void TranslateToolStripItem(ToolStripItem toolStripItem, List<string> controlNames)
+        {
+            if (controlNames.Contains(toolStripItem.Name))
+            {
+                toolStripItem.Text = Data(toolStripItem.Name);
+            }
+
+            ToolStripMenuItem toolStripMenuItem = toolStripItem as ToolStripMenuItem;
+            if (toolStripMenuItem != null)
+            {
+                foreach (ToolStripItem t in toolStripMenuItem.DropDownItems)
+                {
+                    TranslateToolStripItem(t, controlNames);
+                }
+            }
         }
 
         private static bool CultureExists(string name)
