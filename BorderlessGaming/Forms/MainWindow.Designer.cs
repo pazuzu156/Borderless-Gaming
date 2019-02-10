@@ -106,7 +106,6 @@ namespace BorderlessGaming.Forms
             this.toolStripSupportUs = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripAbout = new System.Windows.Forms.ToolStripMenuItem();
-            this.rainwayStrip = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnRestoreWindow = new System.Windows.Forms.Button();
@@ -461,8 +460,7 @@ namespace BorderlessGaming.Forms
             this.mnuMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripOptions,
             this.toolsToolStripMenuItem,
-            this.toolStripInfo,
-            this.rainwayStrip});
+            this.toolStripInfo});
             this.mnuMain.Location = new System.Drawing.Point(0, 0);
             this.mnuMain.MinimumSize = new System.Drawing.Size(0, 31);
             this.mnuMain.Name = "mnuMain";
@@ -719,13 +717,6 @@ namespace BorderlessGaming.Forms
             this.toolStripAbout.Text = "About...";
             this.toolStripAbout.Click += new System.EventHandler(this.toolStripAbout_Click);
             // 
-            // rainwayStrip
-            // 
-            this.rainwayStrip.Image = global::BorderlessGaming.Properties.Resources.master_glyph;
-            this.rainwayStrip.Name = "rainwayStrip";
-            this.rainwayStrip.Size = new System.Drawing.Size(28, 27);
-            this.rainwayStrip.Click += new System.EventHandler(this.checkOutRainwayToolStripMenuItem_Click);
-            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -843,7 +834,6 @@ namespace BorderlessGaming.Forms
         private System.Windows.Forms.ToolStripMenuItem toolStripOptions;
         private System.Windows.Forms.ToolStripMenuItem toolStripRunOnStartup;
         private System.Windows.Forms.ToolStripMenuItem toolStripInfo;
-        private System.Windows.Forms.ToolStripMenuItem rainwayStrip;
         private System.Windows.Forms.ToolStripMenuItem toolStripReportBug;
         private System.Windows.Forms.ToolStripMenuItem toolStripSupportUs;
         private System.Windows.Forms.ToolStripMenuItem toolStripRegexReference;

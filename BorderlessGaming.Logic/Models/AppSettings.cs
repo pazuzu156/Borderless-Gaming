@@ -44,9 +44,5 @@ namespace BorderlessGaming.Logic.Models
         [DefaultValue("en-US")]
         public string DefaultCulture { get; set; } = "en-US";
 
-        [ProtoMember(13)]
-        [DefaultValue(true)]
-        public bool ShowAdOnStart { get; set; } = true;
-
     }
 }
