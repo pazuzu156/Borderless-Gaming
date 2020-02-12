@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutForm));
             this.versionLabel = new System.Windows.Forms.Label();
             this._gitHubLabel = new System.Windows.Forms.Label();
             this._blogLabel = new System.Windows.Forms.Label();
@@ -130,7 +129,7 @@
             // _ownerGithubGlobe
             // 
             this._ownerGithubGlobe.Cursor = System.Windows.Forms.Cursors.Hand;
-            this._ownerGithubGlobe.Image = ((System.Drawing.Image)(resources.GetObject("_ownerGithubGlobe.Image")));
+            this._ownerGithubGlobe.Image = global::BorderlessGaming.Properties.Resources.GlobeGreen;
             this._ownerGithubGlobe.Location = new System.Drawing.Point(9, 107);
             this._ownerGithubGlobe.Name = "_ownerGithubGlobe";
             this._ownerGithubGlobe.Size = new System.Drawing.Size(16, 18);
@@ -141,7 +140,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Image = global::BorderlessGaming.Properties.Resources.Steam;
             this.pictureBox1.Location = new System.Drawing.Point(32, 108);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(15, 16);
@@ -170,7 +169,7 @@
             // _dmxtGithubGlobe
             // 
             this._dmxtGithubGlobe.Cursor = System.Windows.Forms.Cursors.Hand;
-            this._dmxtGithubGlobe.Image = ((System.Drawing.Image)(resources.GetObject("_dmxtGithubGlobe.Image")));
+            this._dmxtGithubGlobe.Image = global::BorderlessGaming.Properties.Resources.GlobeGreen;
             this._dmxtGithubGlobe.Location = new System.Drawing.Point(9, 170);
             this._dmxtGithubGlobe.Name = "_dmxtGithubGlobe";
             this._dmxtGithubGlobe.Size = new System.Drawing.Size(16, 18);
@@ -190,7 +189,7 @@
             // _impulserGithubGlobe
             // 
             this._impulserGithubGlobe.Cursor = System.Windows.Forms.Cursors.Hand;
-            this._impulserGithubGlobe.Image = ((System.Drawing.Image)(resources.GetObject("_impulserGithubGlobe.Image")));
+            this._impulserGithubGlobe.Image = global::BorderlessGaming.Properties.Resources.GlobeGreen;
             this._impulserGithubGlobe.Location = new System.Drawing.Point(9, 188);
             this._impulserGithubGlobe.Name = "_impulserGithubGlobe";
             this._impulserGithubGlobe.Size = new System.Drawing.Size(16, 18);
@@ -241,7 +240,7 @@
             // _madpewGithubGlobe
             // 
             this._madpewGithubGlobe.Cursor = System.Windows.Forms.Cursors.Hand;
-            this._madpewGithubGlobe.Image = ((System.Drawing.Image)(resources.GetObject("_madpewGithubGlobe.Image")));
+            this._madpewGithubGlobe.Image = global::BorderlessGaming.Properties.Resources.GlobeGreen;
             this._madpewGithubGlobe.Location = new System.Drawing.Point(9, 224);
             this._madpewGithubGlobe.Name = "_madpewGithubGlobe";
             this._madpewGithubGlobe.Size = new System.Drawing.Size(16, 18);
@@ -270,7 +269,7 @@
             // _psouza4GithubGlobe
             // 
             this._psouza4GithubGlobe.Cursor = System.Windows.Forms.Cursors.Hand;
-            this._psouza4GithubGlobe.Image = ((System.Drawing.Image)(resources.GetObject("_psouza4GithubGlobe.Image")));
+            this._psouza4GithubGlobe.Image = global::BorderlessGaming.Properties.Resources.GlobeGreen;
             this._psouza4GithubGlobe.Location = new System.Drawing.Point(9, 125);
             this._psouza4GithubGlobe.Name = "_psouza4GithubGlobe";
             this._psouza4GithubGlobe.Size = new System.Drawing.Size(16, 18);
@@ -291,7 +290,7 @@
             // _SecretOnlineGithubGlobe
             // 
             this._SecretOnlineGithubGlobe.Cursor = System.Windows.Forms.Cursors.Hand;
-            this._SecretOnlineGithubGlobe.Image = ((System.Drawing.Image)(resources.GetObject("_SecretOnlineGithubGlobe.Image")));
+            this._SecretOnlineGithubGlobe.Image = global::BorderlessGaming.Properties.Resources.GlobeGreen;
             this._SecretOnlineGithubGlobe.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this._SecretOnlineGithubGlobe.Location = new System.Drawing.Point(9, 242);
             this._SecretOnlineGithubGlobe.Name = "_SecretOnlineGithubGlobe";
@@ -303,7 +302,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Image = global::BorderlessGaming.Properties.Resources.Steam;
             this.pictureBox2.Location = new System.Drawing.Point(32, 126);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(15, 16);
@@ -313,7 +312,7 @@
             // 
             // _codeusaSoftwareLogo
             // 
-            this._codeusaSoftwareLogo.Image = ((System.Drawing.Image)(resources.GetObject("_codeusaSoftwareLogo.Image")));
+            this._codeusaSoftwareLogo.Image = global::BorderlessGaming.Properties.Resources.CodeusaSoftwareLogo;
             this._codeusaSoftwareLogo.Location = new System.Drawing.Point(277, 162);
             this._codeusaSoftwareLogo.Name = "_codeusaSoftwareLogo";
             this._codeusaSoftwareLogo.Size = new System.Drawing.Size(66, 65);
@@ -332,7 +331,7 @@
             // _stackOfPancakesGithubGlobe
             // 
             this._stackOfPancakesGithubGlobe.Cursor = System.Windows.Forms.Cursors.Hand;
-            this._stackOfPancakesGithubGlobe.Image = ((System.Drawing.Image)(resources.GetObject("_stackOfPancakesGithubGlobe.Image")));
+            this._stackOfPancakesGithubGlobe.Image = global::BorderlessGaming.Properties.Resources.GlobeGreen;
             this._stackOfPancakesGithubGlobe.Location = new System.Drawing.Point(9, 206);
             this._stackOfPancakesGithubGlobe.Name = "_stackOfPancakesGithubGlobe";
             this._stackOfPancakesGithubGlobe.Size = new System.Drawing.Size(16, 18);
@@ -373,7 +372,7 @@
             this.Controls.Add(this._gitHubLabel);
             this.Controls.Add(this.versionLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Icon = global::BorderlessGaming.Properties.Resources.BorderlessGamingLogo;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AboutForm";

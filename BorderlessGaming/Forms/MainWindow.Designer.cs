@@ -32,7 +32,6 @@ namespace BorderlessGaming.Forms
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.btnMakeBorderless = new System.Windows.Forms.Button();
             this.lstProcesses = new System.Windows.Forms.ListBox();
             this.processContext = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -122,7 +121,7 @@ namespace BorderlessGaming.Forms
             // 
             // btnMakeBorderless
             // 
-            this.btnMakeBorderless.Image = global::BorderlessGaming.Properties.Resources.borderless;
+            this.btnMakeBorderless.Image = global::BorderlessGaming.Properties.Resources.Borderless;
             this.btnMakeBorderless.Location = new System.Drawing.Point(3, 87);
             this.btnMakeBorderless.Name = "btnMakeBorderless";
             this.btnMakeBorderless.Size = new System.Drawing.Size(37, 36);
@@ -170,21 +169,21 @@ namespace BorderlessGaming.Forms
             // toolStripByTheWindowTitle
             // 
             this.toolStripByTheWindowTitle.Name = "toolStripByTheWindowTitle";
-            this.toolStripByTheWindowTitle.Size = new System.Drawing.Size(248, 22);
+            this.toolStripByTheWindowTitle.Size = new System.Drawing.Size(250, 22);
             this.toolStripByTheWindowTitle.Text = "... by the window title text";
             this.toolStripByTheWindowTitle.Click += new System.EventHandler(this.byTheWindowTitleTextToolStripMenuItem_Click);
             // 
             // toolStripByRegex
             // 
             this.toolStripByRegex.Name = "toolStripByRegex";
-            this.toolStripByRegex.Size = new System.Drawing.Size(248, 22);
+            this.toolStripByRegex.Size = new System.Drawing.Size(250, 22);
             this.toolStripByRegex.Text = "... by the window title text (regex)";
             this.toolStripByRegex.Click += new System.EventHandler(this.byTheWindowTitleTextregexToolStripMenuItem_Click);
             // 
             // toolStripByProcess
             // 
             this.toolStripByProcess.Name = "toolStripByProcess";
-            this.toolStripByProcess.Size = new System.Drawing.Size(248, 22);
+            this.toolStripByProcess.Size = new System.Drawing.Size(250, 22);
             this.toolStripByProcess.Text = "... by the process binary name";
             this.toolStripByProcess.Click += new System.EventHandler(this.byTheProcessBinaryNameToolStripMenuItem_Click);
             // 
@@ -236,7 +235,7 @@ namespace BorderlessGaming.Forms
             this.addSelectedItem.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.addSelectedItem.AutoSize = true;
-            this.addSelectedItem.Image = global::BorderlessGaming.Properties.Resources.add;
+            this.addSelectedItem.Image = global::BorderlessGaming.Properties.Resources.Add;
             this.addSelectedItem.Location = new System.Drawing.Point(3, 3);
             this.addSelectedItem.Name = "addSelectedItem";
             this.addSelectedItem.Size = new System.Drawing.Size(37, 36);
@@ -390,7 +389,7 @@ namespace BorderlessGaming.Forms
             // 
             // btnRemoveFavorite
             // 
-            this.btnRemoveFavorite.Image = global::BorderlessGaming.Properties.Resources.remove;
+            this.btnRemoveFavorite.Image = global::BorderlessGaming.Properties.Resources.Remove;
             this.btnRemoveFavorite.Location = new System.Drawing.Point(3, 45);
             this.btnRemoveFavorite.Name = "btnRemoveFavorite";
             this.btnRemoveFavorite.Size = new System.Drawing.Size(37, 36);
@@ -422,7 +421,7 @@ namespace BorderlessGaming.Forms
             // trayIcon
             // 
             this.trayIcon.ContextMenuStrip = this.trayIconContextMenu;
-            this.trayIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("trayIcon.Icon")));
+            this.trayIcon.Icon = global::BorderlessGaming.Properties.Resources.BorderlessGamingLogo;
             this.trayIcon.Text = "Borderless Gaming";
             this.trayIcon.Visible = true;
             this.trayIcon.DoubleClick += new System.EventHandler(this.trayIcon_DoubleClick);
@@ -434,24 +433,24 @@ namespace BorderlessGaming.Forms
             this.toolStripMenuItem7,
             this.exitToolStripMenuItem});
             this.trayIconContextMenu.Name = "trayIconContextMenu";
-            this.trayIconContextMenu.Size = new System.Drawing.Size(195, 54);
+            this.trayIconContextMenu.Size = new System.Drawing.Size(196, 54);
             // 
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
             this.openToolStripMenuItem.Text = "Show";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.trayIcon_DoubleClick);
             // 
             // toolStripMenuItem7
             // 
             this.toolStripMenuItem7.Name = "toolStripMenuItem7";
-            this.toolStripMenuItem7.Size = new System.Drawing.Size(191, 6);
+            this.toolStripMenuItem7.Size = new System.Drawing.Size(192, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
             this.exitToolStripMenuItem.Text = "Exit Borderless Gaming";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -609,52 +608,52 @@ namespace BorderlessGaming.Forms
             this.toolStripMenuItem12,
             this.toolStripFullApplicationRefresh});
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
-            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(47, 27);
+            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(46, 27);
             this.toolsToolStripMenuItem.Text = "&Tools";
             // 
             // toolStripPauseAutomaticProcessing
             // 
             this.toolStripPauseAutomaticProcessing.CheckOnClick = true;
             this.toolStripPauseAutomaticProcessing.Name = "toolStripPauseAutomaticProcessing";
-            this.toolStripPauseAutomaticProcessing.Size = new System.Drawing.Size(252, 22);
+            this.toolStripPauseAutomaticProcessing.Size = new System.Drawing.Size(250, 22);
             this.toolStripPauseAutomaticProcessing.Text = "Pause Automatic Processing";
             this.toolStripPauseAutomaticProcessing.Click += new System.EventHandler(this.pauseAutomaticProcessingToolStripMenuItem_Click);
             // 
             // toolStripOpenDataFolder
             // 
             this.toolStripOpenDataFolder.Name = "toolStripOpenDataFolder";
-            this.toolStripOpenDataFolder.Size = new System.Drawing.Size(252, 22);
+            this.toolStripOpenDataFolder.Size = new System.Drawing.Size(250, 22);
             this.toolStripOpenDataFolder.Text = "Open Data Folder";
             this.toolStripOpenDataFolder.Click += new System.EventHandler(this.openDataFolderToolStripMenuItem_Click);
             // 
             // toolStripMenuItem11
             // 
             this.toolStripMenuItem11.Name = "toolStripMenuItem11";
-            this.toolStripMenuItem11.Size = new System.Drawing.Size(249, 6);
+            this.toolStripMenuItem11.Size = new System.Drawing.Size(247, 6);
             // 
             // toolStripToggleMouseCursorVisibility
             // 
             this.toolStripToggleMouseCursorVisibility.Name = "toolStripToggleMouseCursorVisibility";
-            this.toolStripToggleMouseCursorVisibility.Size = new System.Drawing.Size(252, 22);
+            this.toolStripToggleMouseCursorVisibility.Size = new System.Drawing.Size(250, 22);
             this.toolStripToggleMouseCursorVisibility.Text = "Toggle Mouse Cursor Visibility";
             this.toolStripToggleMouseCursorVisibility.Click += new System.EventHandler(this.toggleMouseCursorVisibilityToolStripMenuItem_Click);
             // 
             // toolStripToggleWindowsTaskbar
             // 
             this.toolStripToggleWindowsTaskbar.Name = "toolStripToggleWindowsTaskbar";
-            this.toolStripToggleWindowsTaskbar.Size = new System.Drawing.Size(252, 22);
+            this.toolStripToggleWindowsTaskbar.Size = new System.Drawing.Size(250, 22);
             this.toolStripToggleWindowsTaskbar.Text = "Toggle Windows Taskbar Visibility";
             this.toolStripToggleWindowsTaskbar.Click += new System.EventHandler(this.toggleWindowsTaskbarVisibilityToolStripMenuItem_Click);
             // 
             // toolStripMenuItem12
             // 
             this.toolStripMenuItem12.Name = "toolStripMenuItem12";
-            this.toolStripMenuItem12.Size = new System.Drawing.Size(249, 6);
+            this.toolStripMenuItem12.Size = new System.Drawing.Size(247, 6);
             // 
             // toolStripFullApplicationRefresh
             // 
             this.toolStripFullApplicationRefresh.Name = "toolStripFullApplicationRefresh";
-            this.toolStripFullApplicationRefresh.Size = new System.Drawing.Size(252, 22);
+            this.toolStripFullApplicationRefresh.Size = new System.Drawing.Size(250, 22);
             this.toolStripFullApplicationRefresh.Text = "Full Application Refresh";
             this.toolStripFullApplicationRefresh.Click += new System.EventHandler(this.fullApplicationRefreshToolStripMenuItem_Click);
             // 
@@ -675,45 +674,45 @@ namespace BorderlessGaming.Forms
             // toolStripUsageGuide
             // 
             this.toolStripUsageGuide.Name = "toolStripUsageGuide";
-            this.toolStripUsageGuide.Size = new System.Drawing.Size(160, 22);
+            this.toolStripUsageGuide.Size = new System.Drawing.Size(180, 22);
             this.toolStripUsageGuide.Text = "Usage Guide";
             this.toolStripUsageGuide.Click += new System.EventHandler(this.usageGuideToolStripMenuItem_Click);
             // 
             // toolStripRegexReference
             // 
             this.toolStripRegexReference.Name = "toolStripRegexReference";
-            this.toolStripRegexReference.Size = new System.Drawing.Size(160, 22);
+            this.toolStripRegexReference.Size = new System.Drawing.Size(180, 22);
             this.toolStripRegexReference.Text = "Regex Reference";
             this.toolStripRegexReference.Click += new System.EventHandler(this.toolStripRegexReference_Click);
             // 
             // toolStripMenuItem13
             // 
             this.toolStripMenuItem13.Name = "toolStripMenuItem13";
-            this.toolStripMenuItem13.Size = new System.Drawing.Size(157, 6);
+            this.toolStripMenuItem13.Size = new System.Drawing.Size(177, 6);
             // 
             // toolStripReportBug
             // 
             this.toolStripReportBug.Name = "toolStripReportBug";
-            this.toolStripReportBug.Size = new System.Drawing.Size(160, 22);
+            this.toolStripReportBug.Size = new System.Drawing.Size(180, 22);
             this.toolStripReportBug.Text = "Report a Bug";
             this.toolStripReportBug.Click += new System.EventHandler(this.toolStripReportBug_Click);
             // 
             // toolStripSupportUs
             // 
             this.toolStripSupportUs.Name = "toolStripSupportUs";
-            this.toolStripSupportUs.Size = new System.Drawing.Size(160, 22);
+            this.toolStripSupportUs.Size = new System.Drawing.Size(180, 22);
             this.toolStripSupportUs.Text = "Support Us";
             this.toolStripSupportUs.Click += new System.EventHandler(this.toolStripSupportUs_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(157, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(177, 6);
             // 
             // toolStripAbout
             // 
             this.toolStripAbout.Name = "toolStripAbout";
-            this.toolStripAbout.Size = new System.Drawing.Size(160, 22);
+            this.toolStripAbout.Size = new System.Drawing.Size(180, 22);
             this.toolStripAbout.Text = "About...";
             this.toolStripAbout.Click += new System.EventHandler(this.toolStripAbout_Click);
             // 
@@ -756,7 +755,7 @@ namespace BorderlessGaming.Forms
             // 
             // btnRestoreWindow
             // 
-            this.btnRestoreWindow.Image = global::BorderlessGaming.Properties.Resources.bordered;
+            this.btnRestoreWindow.Image = global::BorderlessGaming.Properties.Resources.Bordered;
             this.btnRestoreWindow.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnRestoreWindow.Location = new System.Drawing.Point(3, 129);
             this.btnRestoreWindow.Name = "btnRestoreWindow";
@@ -790,7 +789,7 @@ namespace BorderlessGaming.Forms
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.mnuMain);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Icon = global::BorderlessGaming.Properties.Resources.BorderlessGamingLogo;
             this.MainMenuStrip = this.mnuMain;
             this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(425, 319);
