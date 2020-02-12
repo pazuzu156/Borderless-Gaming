@@ -45,9 +45,6 @@
     <Reference Include="DotNetZip, Version=1.13.3.0, Culture=neutral, PublicKeyToken=6583c7c814667745, processorArchitecture=MSIL">
       <HintPath>..\packages\DotNetZip.1.13.3\lib\net40\DotNetZip.dll</HintPath>
     </Reference>
-    <Reference Include="Facepunch.Steamworks">
-      <HintPath>..\SteamLibs\Facepunch.Steamworks.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.Win32.TaskScheduler, Version=2.8.8.0, Culture=neutral, PublicKeyToken=c416bc1b32d97233, processorArchitecture=MSIL">
       <HintPath>..\packages\TaskScheduler.2.8.8\lib\net452\Microsoft.Win32.TaskScheduler.dll</HintPath>
     </Reference>
