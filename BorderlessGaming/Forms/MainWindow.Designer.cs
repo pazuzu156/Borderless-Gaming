@@ -135,9 +135,10 @@ namespace BorderlessGaming.Forms
             this.lstProcesses.ContextMenuStrip = this.processContext;
             this.lstProcesses.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lstProcesses.FormattingEnabled = true;
-            this.lstProcesses.Location = new System.Drawing.Point(3, 21);
+            this.lstProcesses.IntegralHeight = false;
+            this.lstProcesses.Location = new System.Drawing.Point(11, 24);
             this.lstProcesses.Name = "lstProcesses";
-            this.lstProcesses.Size = new System.Drawing.Size(208, 224);
+            this.lstProcesses.Size = new System.Drawing.Size(197, 208);
             this.lstProcesses.Sorted = true;
             this.lstProcesses.TabIndex = 0;
             this.lstProcesses.SelectedIndexChanged += new System.EventHandler(this.lstProcesses_SelectedIndexChanged);
@@ -249,9 +250,10 @@ namespace BorderlessGaming.Forms
             this.lstFavorites.ContextMenuStrip = this.mnuFavoritesContext;
             this.lstFavorites.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lstFavorites.FormattingEnabled = true;
-            this.lstFavorites.Location = new System.Drawing.Point(259, 21);
+            this.lstFavorites.IntegralHeight = false;
+            this.lstFavorites.Location = new System.Drawing.Point(262, 24);
             this.lstFavorites.Name = "lstFavorites";
-            this.lstFavorites.Size = new System.Drawing.Size(209, 224);
+            this.lstFavorites.Size = new System.Drawing.Size(198, 208);
             this.lstFavorites.Sorted = true;
             this.lstFavorites.TabIndex = 10;
             this.lstFavorites.SelectedIndexChanged += new System.EventHandler(this.lstFavorites_SelectedIndexChanged);
@@ -401,22 +403,22 @@ namespace BorderlessGaming.Forms
             // processLabel
             // 
             this.processLabel.AutoSize = true;
-            this.processLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
-            this.processLabel.Location = new System.Drawing.Point(3, 0);
+            this.processLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.processLabel.Location = new System.Drawing.Point(11, 8);
             this.processLabel.Name = "processLabel";
-            this.processLabel.Size = new System.Drawing.Size(104, 18);
-            this.processLabel.TabIndex = 12;
-            this.processLabel.Text = "Applications:";
+            this.processLabel.Size = new System.Drawing.Size(76, 13);
+            this.processLabel.TabIndex = 20;
+            this.processLabel.Text = "Applications";
             // 
             // favoritesLabel
             // 
             this.favoritesLabel.AutoSize = true;
-            this.favoritesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
-            this.favoritesLabel.Location = new System.Drawing.Point(259, 0);
+            this.favoritesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.favoritesLabel.Location = new System.Drawing.Point(262, 8);
             this.favoritesLabel.Name = "favoritesLabel";
-            this.favoritesLabel.Size = new System.Drawing.Size(174, 18);
-            this.favoritesLabel.TabIndex = 13;
-            this.favoritesLabel.Text = "Favorites (automatic):";
+            this.favoritesLabel.Size = new System.Drawing.Size(59, 13);
+            this.favoritesLabel.TabIndex = 19;
+            this.favoritesLabel.Text = "Favorites";
             // 
             // trayIcon
             // 
@@ -674,83 +676,80 @@ namespace BorderlessGaming.Forms
             // toolStripUsageGuide
             // 
             this.toolStripUsageGuide.Name = "toolStripUsageGuide";
-            this.toolStripUsageGuide.Size = new System.Drawing.Size(180, 22);
+            this.toolStripUsageGuide.Size = new System.Drawing.Size(161, 22);
             this.toolStripUsageGuide.Text = "Usage Guide";
             this.toolStripUsageGuide.Click += new System.EventHandler(this.usageGuideToolStripMenuItem_Click);
             // 
             // toolStripRegexReference
             // 
             this.toolStripRegexReference.Name = "toolStripRegexReference";
-            this.toolStripRegexReference.Size = new System.Drawing.Size(180, 22);
+            this.toolStripRegexReference.Size = new System.Drawing.Size(161, 22);
             this.toolStripRegexReference.Text = "Regex Reference";
             this.toolStripRegexReference.Click += new System.EventHandler(this.toolStripRegexReference_Click);
             // 
             // toolStripMenuItem13
             // 
             this.toolStripMenuItem13.Name = "toolStripMenuItem13";
-            this.toolStripMenuItem13.Size = new System.Drawing.Size(177, 6);
+            this.toolStripMenuItem13.Size = new System.Drawing.Size(158, 6);
             // 
             // toolStripReportBug
             // 
             this.toolStripReportBug.Name = "toolStripReportBug";
-            this.toolStripReportBug.Size = new System.Drawing.Size(180, 22);
+            this.toolStripReportBug.Size = new System.Drawing.Size(161, 22);
             this.toolStripReportBug.Text = "Report a Bug";
             this.toolStripReportBug.Click += new System.EventHandler(this.toolStripReportBug_Click);
             // 
             // toolStripSupportUs
             // 
             this.toolStripSupportUs.Name = "toolStripSupportUs";
-            this.toolStripSupportUs.Size = new System.Drawing.Size(180, 22);
+            this.toolStripSupportUs.Size = new System.Drawing.Size(161, 22);
             this.toolStripSupportUs.Text = "Support Us";
             this.toolStripSupportUs.Click += new System.EventHandler(this.toolStripSupportUs_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(177, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(158, 6);
             // 
             // toolStripAbout
             // 
             this.toolStripAbout.Name = "toolStripAbout";
-            this.toolStripAbout.Size = new System.Drawing.Size(180, 22);
+            this.toolStripAbout.Size = new System.Drawing.Size(161, 22);
             this.toolStripAbout.Text = "About...";
             this.toolStripAbout.Click += new System.EventHandler(this.toolStripAbout_Click);
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 42F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 48F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.processLabel, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.favoritesLabel, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.lstProcesses, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.lstFavorites, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 1, 1);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 31);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.Padding = new System.Windows.Forms.Padding(8);
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(471, 241);
-            this.tableLayoutPanel1.TabIndex = 17;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(471, 243);
+            this.tableLayoutPanel1.TabIndex = 21;
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayoutPanel1.Controls.Add(this.addSelectedItem);
             this.flowLayoutPanel1.Controls.Add(this.btnRemoveFavorite);
             this.flowLayoutPanel1.Controls.Add(this.btnMakeBorderless);
             this.flowLayoutPanel1.Controls.Add(this.btnRestoreWindow);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(214, 18);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(214, 21);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(42, 230);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(42, 214);
             this.flowLayoutPanel1.TabIndex = 14;
             // 
             // btnRestoreWindow
@@ -786,8 +785,8 @@ namespace BorderlessGaming.Forms
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(471, 296);
-            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.mnuMain);
             this.Icon = global::BorderlessGaming.Properties.Resources.BorderlessGamingLogo;
             this.MainMenuStrip = this.mnuMain;
