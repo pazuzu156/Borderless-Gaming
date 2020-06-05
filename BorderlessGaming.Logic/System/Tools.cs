@@ -9,7 +9,6 @@ using System.Xml;
 using BorderlessGaming.Logic.Core;
 using BorderlessGaming.Logic.Models;
 using BorderlessGaming.Logic.Properties;
-using BorderlessGaming.Logic.Steam;
 using BorderlessGaming.Logic.System.Utilities;
 using Ionic.Zip;
 
@@ -69,10 +68,6 @@ namespace BorderlessGaming.Logic.System
             }
             Config.Load();
             LanguageManager.Load();
-            if (!Config.Instance.AppSettings.DisableSteamIntegration)
-            {
-                SteamApi.Init();
-            }
         }
 
         public static Rectangle GetContainingRectangle(Rectangle a, Rectangle b)
