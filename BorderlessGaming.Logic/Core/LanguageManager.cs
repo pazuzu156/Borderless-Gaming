@@ -33,24 +33,31 @@ namespace BorderlessGaming.Logic.Core
             return allNames;
         }
 
-        public static void Init(Control.ControlCollection controls, List<string> controlNames)
+        public static void Translate(Control.ControlCollection controls)
         {
             foreach (Control control in controls.OfType<Control>())
             {
-                TranslateControl(control, controlNames);
+                Translate(control);
             }
         }
 
-        private static void TranslateControl(Control control, List<string> controlNames)
+        public static void Translate(Control control)
         {
-            if (controlNames.Contains(control.Name))
+            if (control == null)
             {
-                control.Text = Data(control.Name);
+                return;
+            }
+
+            string data = Data(control.Name);
+            if (!string.IsNullOrWhiteSpace(data))
+            {
+                control.Text = data;
             }
 
             foreach (Control c in control.Controls)
             {
-                TranslateControl(c, controlNames);
+                Translate(c);
+                Translate(c.ContextMenuStrip);
             }
 
             ToolStrip toolStrip = control as ToolStrip;
@@ -58,16 +65,28 @@ namespace BorderlessGaming.Logic.Core
             {
                 foreach (ToolStripItem t in toolStrip.Items)
                 {
-                    TranslateToolStripItem(t, controlNames);
+                    Translate(t);
                 }
             }
         }
 
-        private static void TranslateToolStripItem(ToolStripItem toolStripItem, List<string> controlNames)
+        public static void Translate(ContextMenuStrip contextMenuStrip)
         {
-            if (controlNames.Contains(toolStripItem.Name))
+            if (contextMenuStrip != null)
             {
-                toolStripItem.Text = Data(toolStripItem.Name);
+                foreach (ToolStripItem t in contextMenuStrip.Items)
+                {
+                    Translate(t);
+                }
+            }
+        }
+
+        public static void Translate(ToolStripItem toolStripItem)
+        {
+            string data = Data(toolStripItem.Name);
+            if (!string.IsNullOrWhiteSpace(data))
+            {
+                toolStripItem.Text = data;
             }
 
             ToolStripMenuItem toolStripMenuItem = toolStripItem as ToolStripMenuItem;
@@ -75,7 +94,7 @@ namespace BorderlessGaming.Logic.Core
             {
                 foreach (ToolStripItem t in toolStripMenuItem.DropDownItems)
                 {
-                    TranslateToolStripItem(t, controlNames);
+                    Translate(t);
                 }
             }
         }
@@ -92,8 +111,9 @@ namespace BorderlessGaming.Logic.Core
             var data = lang.Data(key);
             if (string.IsNullOrWhiteSpace(data))
             {
-                MessageBox.Show($"{lang.Culture} is missing a translation for {key}");
-                Environment.Exit(0);
+                // TODO log missing translation, instead of closing the application
+                //MessageBox.Show($"{lang.Culture} is missing a translation for {key}");
+                //Environment.Exit(0);
             }
             return data;
         }
