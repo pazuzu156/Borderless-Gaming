@@ -122,7 +122,7 @@ namespace BorderlessGaming.Forms
             // btnMakeBorderless
             // 
             this.btnMakeBorderless.Image = global::BorderlessGaming.Properties.Resources.Borderless;
-            this.btnMakeBorderless.Location = new System.Drawing.Point(3, 87);
+            this.btnMakeBorderless.Location = new System.Drawing.Point(3, 45);
             this.btnMakeBorderless.Name = "btnMakeBorderless";
             this.btnMakeBorderless.Size = new System.Drawing.Size(37, 36);
             this.btnMakeBorderless.TabIndex = 1;
@@ -138,7 +138,7 @@ namespace BorderlessGaming.Forms
             this.lstProcesses.IntegralHeight = false;
             this.lstProcesses.Location = new System.Drawing.Point(11, 24);
             this.lstProcesses.Name = "lstProcesses";
-            this.lstProcesses.Size = new System.Drawing.Size(197, 208);
+            this.lstProcesses.Size = new System.Drawing.Size(240, 161);
             this.lstProcesses.Sorted = true;
             this.lstProcesses.TabIndex = 0;
             this.lstProcesses.SelectedIndexChanged += new System.EventHandler(this.lstProcesses_SelectedIndexChanged);
@@ -251,9 +251,9 @@ namespace BorderlessGaming.Forms
             this.lstFavorites.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lstFavorites.FormattingEnabled = true;
             this.lstFavorites.IntegralHeight = false;
-            this.lstFavorites.Location = new System.Drawing.Point(262, 24);
+            this.lstFavorites.Location = new System.Drawing.Point(305, 24);
             this.lstFavorites.Name = "lstFavorites";
-            this.lstFavorites.Size = new System.Drawing.Size(198, 208);
+            this.lstFavorites.Size = new System.Drawing.Size(240, 161);
             this.lstFavorites.Sorted = true;
             this.lstFavorites.TabIndex = 10;
             this.lstFavorites.SelectedIndexChanged += new System.EventHandler(this.lstFavorites_SelectedIndexChanged);
@@ -392,7 +392,7 @@ namespace BorderlessGaming.Forms
             // btnRemoveFavorite
             // 
             this.btnRemoveFavorite.Image = global::BorderlessGaming.Properties.Resources.Remove;
-            this.btnRemoveFavorite.Location = new System.Drawing.Point(3, 45);
+            this.btnRemoveFavorite.Location = new System.Drawing.Point(3, 129);
             this.btnRemoveFavorite.Name = "btnRemoveFavorite";
             this.btnRemoveFavorite.Size = new System.Drawing.Size(37, 36);
             this.btnRemoveFavorite.TabIndex = 11;
@@ -414,7 +414,7 @@ namespace BorderlessGaming.Forms
             // 
             this.favoritesLabel.AutoSize = true;
             this.favoritesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.favoritesLabel.Location = new System.Drawing.Point(262, 8);
+            this.favoritesLabel.Location = new System.Drawing.Point(305, 8);
             this.favoritesLabel.Name = "favoritesLabel";
             this.favoritesLabel.Size = new System.Drawing.Size(59, 13);
             this.favoritesLabel.TabIndex = 19;
@@ -465,7 +465,7 @@ namespace BorderlessGaming.Forms
             this.mnuMain.Location = new System.Drawing.Point(0, 0);
             this.mnuMain.MinimumSize = new System.Drawing.Size(0, 31);
             this.mnuMain.Name = "mnuMain";
-            this.mnuMain.Size = new System.Drawing.Size(471, 31);
+            this.mnuMain.Size = new System.Drawing.Size(556, 31);
             this.mnuMain.TabIndex = 16;
             this.mnuMain.Text = "mnuMain";
             // 
@@ -736,27 +736,27 @@ namespace BorderlessGaming.Forms
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(471, 243);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(556, 196);
             this.tableLayoutPanel1.TabIndex = 21;
             // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Controls.Add(this.addSelectedItem);
-            this.flowLayoutPanel1.Controls.Add(this.btnRemoveFavorite);
             this.flowLayoutPanel1.Controls.Add(this.btnMakeBorderless);
             this.flowLayoutPanel1.Controls.Add(this.btnRestoreWindow);
+            this.flowLayoutPanel1.Controls.Add(this.btnRemoveFavorite);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(214, 21);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(257, 21);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(42, 214);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(42, 167);
             this.flowLayoutPanel1.TabIndex = 14;
             // 
             // btnRestoreWindow
             // 
             this.btnRestoreWindow.Image = global::BorderlessGaming.Properties.Resources.Bordered;
             this.btnRestoreWindow.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnRestoreWindow.Location = new System.Drawing.Point(3, 129);
+            this.btnRestoreWindow.Location = new System.Drawing.Point(3, 87);
             this.btnRestoreWindow.Name = "btnRestoreWindow";
             this.btnRestoreWindow.Size = new System.Drawing.Size(37, 36);
             this.btnRestoreWindow.TabIndex = 12;
@@ -768,9 +768,9 @@ namespace BorderlessGaming.Forms
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.statusLabel});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 274);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 227);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(471, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(556, 22);
             this.statusStrip1.TabIndex = 18;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -784,14 +784,14 @@ namespace BorderlessGaming.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(471, 296);
+            this.ClientSize = new System.Drawing.Size(556, 249);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.mnuMain);
             this.Icon = global::BorderlessGaming.Properties.Resources.BorderlessGamingLogo;
             this.MainMenuStrip = this.mnuMain;
             this.MaximizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(425, 319);
+            this.MinimumSize = new System.Drawing.Size(570, 288);
             this.Name = "MainWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Borderless Gaming";
