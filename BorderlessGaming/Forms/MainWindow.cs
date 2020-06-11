@@ -17,93 +17,13 @@ namespace BorderlessGaming.Forms
 {
     public partial class MainWindow : Form
     {
-        private static List<string> LocalizableControlNames = new List<string>
-        {
-            "setWindowSizeTitle",
-            "setWindowSizePixelPrompt",
-            "setWindowSizeWidthPrompt",
-            "setWindowSizeHeightPrompt",
-            "setWindowSizeMouseTitle",
-            "setWindowSizeMousePrompt",
-            "adjustWindowBoundsTitle",
-            "adjustWindowBoundsPrompt",
-            "adjustWindowBoundsLeft",
-            "adjustWindowBoundsRight",
-            "adjustWindowBoundsTop",
-            "adjustWindowBoundsBottom",
-            //"settingConfirmationTitle",
-            //"settingConfirmationPrompt",
-            "setWindowTitleTitle",
-            "setWindowTitlePrompt",
-            "toggleMouseCursorVisibilityTitle",
-            "toggleMouseCursorVisibilityPrompt",
-            nameof(toolStripOptions),
-            nameof(toolStripRunOnStartup),
-            nameof(toolStripLanguages),
-            nameof(toolStripCheckForUpdates),
-            nameof(toolStripGlobalHotkey),
-            nameof(toolStripMouseLock),
-            nameof(toolStripMouseHide),
-            nameof(toolStripMinimizedToTray),
-            nameof(toolStripCloseToTray),
-            nameof(toolStripHideBalloonTips),
-            nameof(toolStripSlowWindowDetection),
-            nameof(toolStripViewFullProcessDetails),
-            nameof(toolStripRestoreProcesses),
-            nameof(toolsToolStripMenuItem),
-            nameof(toolStripPauseAutomaticProcessing),
-            nameof(toolStripOpenDataFolder),
-            nameof(toolStripToggleMouseCursorVisibility),
-            nameof(toolStripToggleWindowsTaskbar),
-            nameof(toolStripFullApplicationRefresh),
-            "toolStripDisableSteamIntegration",
-            nameof(toolStripInfo),
-            nameof(toolStripUsageGuide),
-            nameof(toolStripRegexReference),
-            nameof(toolStripReportBug),
-            nameof(toolStripSupportUs),
-            nameof(toolStripAbout),
-            nameof(contextAddToFavs),
-            nameof(toolStripByTheWindowTitle),
-            nameof(toolStripByRegex),
-            nameof(toolStripByProcess),
-            nameof(contextBorderless),
-            nameof(contextBorderlessOn),
-            nameof(toolStripSetWindowTitle),
-            nameof(toolStripHideProcess),
-            nameof(toolStripFullScreen),
-            nameof(toolStripNoSizeChange),
-            nameof(toolStripSetSetWindowSize),
-            nameof(toolStripAutomaximize),
-            nameof(toolStripAdjustWindowBounds),
-            nameof(toolStripAlwaysOnTop),
-            nameof(toolStripDelayBorderless),
-            nameof(toolStripHideMouseCursor),
-            nameof(toolStripHideWindowsTaskbar),
-            nameof(toolStripRemoveMenus),
-            nameof(contextFavScreen),
-            nameof(toolStripMuteInBackground),
-            nameof(contextRemoveFromFavs),
-            "superSize",
-            nameof(processLabel),
-            nameof(favoritesLabel),
-            nameof(statusLabel),
-            "moreOptionsLabel",
-            "steamHint",
-            "addFavorite",
-            "removeFavorite",
-            "makeBorderless",
-            "restoreBorders",
-            //nameof(exitToolStripMenuItem),
-            //nameof(openToolStripMenuItem),
-        };
-
         public MainWindow()
         {
             _watcher = new ProcessWatcher(this);
             InitializeComponent();
             LanguageManager.Setup(toolStripLanguages);
-            LanguageManager.Init(this.Controls, LocalizableControlNames);
+            LanguageManager.Translate(this.Controls);
+            LanguageManager.Translate(this.trayIcon.ContextMenuStrip);
         }
 
         public void AddFavoriteToList(Favorite fav)
