@@ -22,8 +22,7 @@ namespace BorderlessGaming
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Tools.Setup();
-            //use github updating for non-steam
-            if (!Config.Instance.StartupOptions.IsSteam && Config.Instance.AppSettings.CheckForUpdates)
+            if (Config.Instance.AppSettings.CheckForUpdates)
             {
                 Tools.CheckForUpdates();
             }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
@@ -8,7 +9,6 @@ using System.Windows.Forms;
 using BorderlessGaming.Logic.Core;
 using BorderlessGaming.Logic.Extensions;
 using BorderlessGaming.Logic.Models;
-using BorderlessGaming.Logic.Steam;
 using BorderlessGaming.Logic.System;
 using BorderlessGaming.Logic.Windows;
 using BorderlessGaming.Properties;
@@ -17,12 +17,13 @@ namespace BorderlessGaming.Forms
 {
     public partial class MainWindow : Form
     {
-
         public MainWindow()
         {
             _watcher = new ProcessWatcher(this);
             InitializeComponent();
             LanguageManager.Setup(toolStripLanguages);
+            LanguageManager.Translate(this.Controls);
+            LanguageManager.Translate(this.trayIcon.ContextMenuStrip);
         }
 
         public void AddFavoriteToList(Favorite fav)
@@ -228,10 +229,6 @@ namespace BorderlessGaming.Forms
             //clear the process list and repopulate it
             lstProcesses.Items.Clear();
             await _watcher.Refresh();
-        }
-        private void rainwayToolStrip_Click(object sender, EventArgs e)
-        {
-            Tools.GotoSite("https://rainway.io/?ref=borderlessgaming");
         }
 
         private void usageGuideToolStripMenuItem_Click(object sender, EventArgs e)
@@ -890,8 +887,6 @@ fav.PositionX.ToString()), out int favPositionX);
             }
         }
 
-        private ToolStripMenuItem _toolStripDisableSteamIntegration;
-
         /// <summary>
         ///     Sets up the form
         /// </summary>
@@ -922,30 +917,6 @@ fav.PositionX.ToString()), out int favPositionX);
             {
                 WindowState = FormWindowState.Normal;
             }
-
-            if (SteamApi.IsLoaded && _toolStripDisableSteamIntegration == null)
-            {
-                _toolStripDisableSteamIntegration =
-                    new ToolStripMenuItem
-                    {
-                        Name = "toolStripDisableSteamIntegration",
-                        Size = new Size(254, 22),
-                        Text = LanguageManager.Data("toolStripDisableSteamIntegration"),
-                        ToolTipText = LanguageManager.Data("steamHint"),
-                        Checked = settings.DisableSteamIntegration,
-                        CheckOnClick = true
-                    };
-                // let's do this before registering the CheckedChanged event
-                _toolStripDisableSteamIntegration.CheckedChanged +=
-                    ToolStripDisableSteamIntegrationCheckChanged;
-                toolsToolStripMenuItem.DropDownItems.Insert(0, _toolStripDisableSteamIntegration);
-            }
-        }
-
-        private void ToolStripDisableSteamIntegrationCheckChanged(object sender, EventArgs e)
-        {
-            Config.Instance.AppSettings.DisableSteamIntegration = _toolStripDisableSteamIntegration.Checked;
-            Config.Save();
         }
 
         private void MainWindow_Shown(object sender, EventArgs e)
@@ -954,14 +925,6 @@ fav.PositionX.ToString()), out int favPositionX);
             if (Config.Instance.AppSettings.StartMinimized || Config.Instance.StartupOptions.Minimize)
             {
                 Hide();
-            } else {
-             //   if (Config.Instance.AppSettings.ShowAdOnStart)
-               // {
-                //    var rainway = new Rainway { StartPosition = this.StartPosition, TopMost = true };
-                 //   rainway.ShowDialog(this);
-                 //   rainway.BringToFront();
-
-               // }
             }
             // initialize favorite list
             foreach (var ni in Config.Instance.Favorites)
@@ -1224,11 +1187,6 @@ fav.PositionX.ToString()), out int favPositionX);
                 }
             }
             RefreshFavoritesList(fav);
-        }
-
-        private void checkOutRainwayToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Tools.GotoSite("https://rainway.io/?ref=borderlessgaming3");
         }
     }
 }

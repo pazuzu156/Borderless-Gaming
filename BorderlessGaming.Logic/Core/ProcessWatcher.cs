@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -189,8 +190,20 @@ namespace BorderlessGaming.Logic.Core
 
                     if (!process.NoAccess)
                     {
-                        await TaskUtilities.StartTaskAndWait(() => { currentTitle = Native.GetWindowTitle(process.WindowHandle); },
-                            Config.Instance.AppSettings.SlowWindowDetection ? 10 : 2); shouldBePruned = process.WindowTitle != currentTitle;
+                        await TaskUtilities.StartTaskAndWait(
+                            () =>
+                            {
+                                try
+                                {
+                                    currentTitle = Native.GetWindowTitle(process.WindowHandle);
+                                }
+                                catch(EncoderFallbackException e)
+                                {
+                                    // this happens if a Unicode-CHar cannot be translated with the given Codepage
+                                }
+                            },
+                            Config.Instance.AppSettings.SlowWindowDetection ? 10 : 2);
+                        shouldBePruned = process.WindowTitle != currentTitle;
                     }
                 }
                 if (shouldBePruned)

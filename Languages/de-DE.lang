@@ -81,3 +81,5 @@ addFavorite|Fügt ausgewählte Anwendung den Favoriten hinzu (durch den Fenstert
 removeFavorite|Entfernt ausgewählten Favorit von der Liste.
 makeBorderless|Macht ausgewählte Anwendung randlos.
 restoreBorders|Versucht den Rand eines Fensters wiederherzustellen.
+exitToolStripMenuItem|Beenden
+openToolStripMenuItem|Öffnen

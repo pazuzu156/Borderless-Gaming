@@ -32,7 +32,6 @@ namespace BorderlessGaming.Forms
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.btnMakeBorderless = new System.Windows.Forms.Button();
             this.lstProcesses = new System.Windows.Forms.ListBox();
             this.processContext = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -76,6 +75,7 @@ namespace BorderlessGaming.Forms
             this.mnuMain = new System.Windows.Forms.MenuStrip();
             this.toolStripOptions = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripRunOnStartup = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripLanguages = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripCheckForUpdates = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripGlobalHotkey = new System.Windows.Forms.ToolStripMenuItem();
@@ -98,7 +98,6 @@ namespace BorderlessGaming.Forms
             this.toolStripMenuItem12 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripFullApplicationRefresh = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripInfo = new System.Windows.Forms.ToolStripMenuItem();
-            this.rainwayStrip = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripUsageGuide = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripRegexReference = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem13 = new System.Windows.Forms.ToolStripSeparator();
@@ -111,7 +110,6 @@ namespace BorderlessGaming.Forms
             this.btnRestoreWindow = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.statusLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripLanguages = new System.Windows.Forms.ToolStripMenuItem();
             this.processContext.SuspendLayout();
             this.mnuFavoritesContext.SuspendLayout();
             this.trayIconContextMenu.SuspendLayout();
@@ -123,25 +121,30 @@ namespace BorderlessGaming.Forms
             // 
             // btnMakeBorderless
             // 
-            resources.ApplyResources(this.btnMakeBorderless, "btnMakeBorderless");
-            this.btnMakeBorderless.Image = global::BorderlessGaming.Properties.Resources.borderless;
+            this.btnMakeBorderless.Image = global::BorderlessGaming.Properties.Resources.Borderless;
+            this.btnMakeBorderless.Location = new System.Drawing.Point(3, 45);
             this.btnMakeBorderless.Name = "btnMakeBorderless";
+            this.btnMakeBorderless.Size = new System.Drawing.Size(37, 36);
+            this.btnMakeBorderless.TabIndex = 1;
             this.btnMakeBorderless.UseVisualStyleBackColor = true;
             this.btnMakeBorderless.Click += new System.EventHandler(this.btnMakeBorderless_Click);
             this.btnMakeBorderless.MouseHover += new System.EventHandler(this.btnMakeBorderless_MouseHover);
             // 
             // lstProcesses
             // 
-            resources.ApplyResources(this.lstProcesses, "lstProcesses");
             this.lstProcesses.ContextMenuStrip = this.processContext;
+            this.lstProcesses.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lstProcesses.FormattingEnabled = true;
+            this.lstProcesses.IntegralHeight = false;
+            this.lstProcesses.Location = new System.Drawing.Point(11, 24);
             this.lstProcesses.Name = "lstProcesses";
+            this.lstProcesses.Size = new System.Drawing.Size(240, 161);
             this.lstProcesses.Sorted = true;
+            this.lstProcesses.TabIndex = 0;
             this.lstProcesses.SelectedIndexChanged += new System.EventHandler(this.lstProcesses_SelectedIndexChanged);
             // 
             // processContext
             // 
-            resources.ApplyResources(this.processContext, "processContext");
             this.processContext.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.contextAddToFavs,
             this.toolStripMenuItem1,
@@ -151,103 +154,112 @@ namespace BorderlessGaming.Forms
             this.toolStripMenuItem8,
             this.toolStripHideProcess});
             this.processContext.Name = "processContext";
+            this.processContext.Size = new System.Drawing.Size(187, 126);
             this.processContext.Opening += new System.ComponentModel.CancelEventHandler(this.processContext_Opening);
             // 
             // contextAddToFavs
             // 
-            resources.ApplyResources(this.contextAddToFavs, "contextAddToFavs");
             this.contextAddToFavs.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripByTheWindowTitle,
             this.toolStripByRegex,
             this.toolStripByProcess});
             this.contextAddToFavs.Name = "contextAddToFavs";
-            this.contextAddToFavs.Text = LanguageManager.Data("contextAddToFavs");
+            this.contextAddToFavs.Size = new System.Drawing.Size(186, 22);
+            this.contextAddToFavs.Text = "Add to Favorites...";
             // 
-            // byTheWindowTitleTextToolStripMenuItem
+            // toolStripByTheWindowTitle
             // 
-            resources.ApplyResources(this.toolStripByTheWindowTitle, "toolStripByTheWindowTitle");
             this.toolStripByTheWindowTitle.Name = "toolStripByTheWindowTitle";
-            this.toolStripByTheWindowTitle.Text = LanguageManager.Data("toolStripByTheWindowTitle");
+            this.toolStripByTheWindowTitle.Size = new System.Drawing.Size(250, 22);
+            this.toolStripByTheWindowTitle.Text = "... by the window title text";
             this.toolStripByTheWindowTitle.Click += new System.EventHandler(this.byTheWindowTitleTextToolStripMenuItem_Click);
             // 
-            // byTheWindowTitleTextregexToolStripMenuItem
+            // toolStripByRegex
             // 
-            resources.ApplyResources(this.toolStripByRegex, "toolStripByRegex");
             this.toolStripByRegex.Name = "toolStripByRegex";
-            this.toolStripByRegex.Text = LanguageManager.Data("toolStripByRegex");
+            this.toolStripByRegex.Size = new System.Drawing.Size(250, 22);
+            this.toolStripByRegex.Text = "... by the window title text (regex)";
             this.toolStripByRegex.Click += new System.EventHandler(this.byTheWindowTitleTextregexToolStripMenuItem_Click);
             // 
-            // byTheProcessBinaryNameToolStripMenuItem
+            // toolStripByProcess
             // 
-            resources.ApplyResources(this.toolStripByProcess, "toolStripByProcess");
             this.toolStripByProcess.Name = "toolStripByProcess";
-            this.toolStripByProcess.Text = LanguageManager.Data("toolStripByProcess");
+            this.toolStripByProcess.Size = new System.Drawing.Size(250, 22);
+            this.toolStripByProcess.Text = "... by the process binary name";
             this.toolStripByProcess.Click += new System.EventHandler(this.byTheProcessBinaryNameToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
-            resources.ApplyResources(this.toolStripMenuItem1, "toolStripMenuItem1");
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(183, 6);
             // 
             // contextBorderless
             // 
-            resources.ApplyResources(this.contextBorderless, "contextBorderless");
             this.contextBorderless.Name = "contextBorderless";
-            this.contextBorderless.Text = LanguageManager.Data("contextBorderless");
+            this.contextBorderless.Size = new System.Drawing.Size(186, 22);
+            this.contextBorderless.Text = "Make Borderless";
             this.contextBorderless.Click += new System.EventHandler(this.btnMakeBorderless_Click);
             // 
             // contextBorderlessOn
             // 
-            resources.ApplyResources(this.contextBorderlessOn, "contextBorderlessOn");
             this.contextBorderlessOn.Name = "contextBorderlessOn";
-            this.contextBorderlessOn.Text = LanguageManager.Data("contextBorderlessOn");
+            this.contextBorderlessOn.Size = new System.Drawing.Size(186, 22);
+            this.contextBorderlessOn.Text = "Make Borderless on...";
             // 
-            // setWindowTitleToolStripMenuItem
+            // toolStripSetWindowTitle
             // 
-            resources.ApplyResources(this.toolStripSetWindowTitle, "toolStripSetWindowTitle");
             this.toolStripSetWindowTitle.Name = "toolStripSetWindowTitle";
-            this.toolStripSetWindowTitle.Text = LanguageManager.Data("toolStripSetWindowTitle");
+            this.toolStripSetWindowTitle.Size = new System.Drawing.Size(186, 22);
+            this.toolStripSetWindowTitle.Text = "Set Window Title";
             this.toolStripSetWindowTitle.Click += new System.EventHandler(this.setWindowTitleToolStripMenuItem_Click);
             // 
             // toolStripMenuItem8
             // 
-            resources.ApplyResources(this.toolStripMenuItem8, "toolStripMenuItem8");
             this.toolStripMenuItem8.Name = "toolStripMenuItem8";
+            this.toolStripMenuItem8.Size = new System.Drawing.Size(183, 6);
             // 
-            // hideThisProcessToolStripMenuItem
+            // toolStripHideProcess
             // 
-            resources.ApplyResources(this.toolStripHideProcess, "toolStripHideProcess");
             this.toolStripHideProcess.Name = "toolStripHideProcess";
-            this.toolStripHideProcess.Text = LanguageManager.Data("toolStripHideProcess");
+            this.toolStripHideProcess.Size = new System.Drawing.Size(186, 22);
+            this.toolStripHideProcess.Text = "Hide This Process";
             this.toolStripHideProcess.Click += new System.EventHandler(this.hideThisProcessToolStripMenuItem_Click);
             // 
             // contextFavScreen
             // 
-            resources.ApplyResources(this.contextFavScreen, "contextFavScreen");
-            this.contextFavScreen.Text = LanguageManager.Data("contextFavScreen");
             this.contextFavScreen.Name = "contextFavScreen";
+            this.contextFavScreen.Size = new System.Drawing.Size(207, 22);
+            this.contextFavScreen.Text = "Select Favorite Screen...";
             // 
             // addSelectedItem
             // 
-            resources.ApplyResources(this.addSelectedItem, "addSelectedItem");
-            this.addSelectedItem.Image = global::BorderlessGaming.Properties.Resources.add;
+            this.addSelectedItem.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.addSelectedItem.AutoSize = true;
+            this.addSelectedItem.Image = global::BorderlessGaming.Properties.Resources.Add;
+            this.addSelectedItem.Location = new System.Drawing.Point(3, 3);
             this.addSelectedItem.Name = "addSelectedItem";
+            this.addSelectedItem.Size = new System.Drawing.Size(37, 36);
+            this.addSelectedItem.TabIndex = 7;
             this.addSelectedItem.UseVisualStyleBackColor = true;
             this.addSelectedItem.Click += new System.EventHandler(this.addSelectedItem_Click);
             this.addSelectedItem.MouseHover += new System.EventHandler(this.addSelectedItem_MouseHover);
             // 
             // lstFavorites
             // 
-            resources.ApplyResources(this.lstFavorites, "lstFavorites");
             this.lstFavorites.ContextMenuStrip = this.mnuFavoritesContext;
+            this.lstFavorites.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lstFavorites.FormattingEnabled = true;
+            this.lstFavorites.IntegralHeight = false;
+            this.lstFavorites.Location = new System.Drawing.Point(305, 24);
             this.lstFavorites.Name = "lstFavorites";
+            this.lstFavorites.Size = new System.Drawing.Size(240, 161);
             this.lstFavorites.Sorted = true;
+            this.lstFavorites.TabIndex = 10;
             this.lstFavorites.SelectedIndexChanged += new System.EventHandler(this.lstFavorites_SelectedIndexChanged);
             // 
             // mnuFavoritesContext
             // 
-            resources.ApplyResources(this.mnuFavoritesContext, "mnuFavoritesContext");
             this.mnuFavoritesContext.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripFullScreen,
             this.toolStripNoSizeChange,
@@ -266,183 +278,199 @@ namespace BorderlessGaming.Forms
             this.toolStripMuteInBackground,
             this.contextRemoveFromFavs});
             this.mnuFavoritesContext.Name = "mnuFavoritesRightClick";
+            this.mnuFavoritesContext.Size = new System.Drawing.Size(208, 308);
             this.mnuFavoritesContext.Opening += new System.ComponentModel.CancelEventHandler(this.mnuFavoritesContext_Opening);
             // 
-            // fullScreenToolStripMenuItem
+            // toolStripFullScreen
             // 
-            resources.ApplyResources(this.toolStripFullScreen, "toolStripFullScreen");
             this.toolStripFullScreen.CheckOnClick = true;
             this.toolStripFullScreen.Name = "toolStripFullScreen";
-            this.toolStripFullScreen.Text = LanguageManager.Data("toolStripFullScreen");
+            this.toolStripFullScreen.Size = new System.Drawing.Size(207, 22);
+            this.toolStripFullScreen.Text = "Full Screen";
             this.toolStripFullScreen.Click += new System.EventHandler(this.fullScreenToolStripMenuItem_Click);
             // 
-            // noSizeChangeToolStripMenuItem
+            // toolStripNoSizeChange
             // 
-            resources.ApplyResources(this.toolStripNoSizeChange, "toolStripNoSizeChange");
             this.toolStripNoSizeChange.CheckOnClick = true;
             this.toolStripNoSizeChange.Name = "toolStripNoSizeChange";
-            this.toolStripNoSizeChange.Text = LanguageManager.Data("toolStripNoSizeChange");
+            this.toolStripNoSizeChange.Size = new System.Drawing.Size(207, 22);
+            this.toolStripNoSizeChange.Text = "No Size Change";
             this.toolStripNoSizeChange.Click += new System.EventHandler(this.noSizeChangeToolStripMenuItem_Click);
             // 
-            // setWindowSizeToolStripMenuItem
+            // toolStripSetSetWindowSize
             // 
-            resources.ApplyResources(this.toolStripSetSetWindowSize, "toolStripSetSetWindowSize");
             this.toolStripSetSetWindowSize.Name = "toolStripSetSetWindowSize";
-            this.toolStripSetSetWindowSize.Text = LanguageManager.Data("toolStripSetSetWindowSize");
+            this.toolStripSetSetWindowSize.Size = new System.Drawing.Size(207, 22);
+            this.toolStripSetSetWindowSize.Text = "Set Window Size";
             this.toolStripSetSetWindowSize.Click += new System.EventHandler(this.setWindowSizeToolStripMenuItem_Click);
             // 
             // toolStripMenuItem6
             // 
-            resources.ApplyResources(this.toolStripMenuItem6, "toolStripMenuItem6");
             this.toolStripMenuItem6.Name = "toolStripMenuItem6";
+            this.toolStripMenuItem6.Size = new System.Drawing.Size(204, 6);
             // 
-            // automaximizeToolStripMenuItem
+            // toolStripAutomaximize
             // 
-            resources.ApplyResources(this.toolStripAutomaximize, "toolStripAutomaximize");
             this.toolStripAutomaximize.CheckOnClick = true;
             this.toolStripAutomaximize.Name = "toolStripAutomaximize";
-            this.toolStripAutomaximize.Text = LanguageManager.Data("toolStripAutomaximize");
+            this.toolStripAutomaximize.Size = new System.Drawing.Size(207, 22);
+            this.toolStripAutomaximize.Text = "Auto-Maximize";
             this.toolStripAutomaximize.Click += new System.EventHandler(this.automaximizeToolStripMenuItem_Click);
             // 
-            // adjustWindowBoundsToolStripMenuItem
+            // toolStripAdjustWindowBounds
             // 
-            resources.ApplyResources(this.toolStripAdjustWindowBounds, "toolStripAdjustWindowBounds");
             this.toolStripAdjustWindowBounds.Name = "toolStripAdjustWindowBounds";
-            this.toolStripAdjustWindowBounds.Text = LanguageManager.Data("toolStripAdjustWindowBounds");
+            this.toolStripAdjustWindowBounds.Size = new System.Drawing.Size(207, 22);
+            this.toolStripAdjustWindowBounds.Text = "Adjust Window Bounds";
             this.toolStripAdjustWindowBounds.Click += new System.EventHandler(this.adjustWindowBoundsToolStripMenuItem_Click);
             // 
             // toolStripMenuItem4
             // 
-            resources.ApplyResources(this.toolStripMenuItem4, "toolStripMenuItem4");
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(204, 6);
             // 
-            // alwaysOnTopToolStripMenuItem
+            // toolStripAlwaysOnTop
             // 
-            resources.ApplyResources(this.toolStripAlwaysOnTop, "toolStripAlwaysOnTop");
             this.toolStripAlwaysOnTop.CheckOnClick = true;
             this.toolStripAlwaysOnTop.Name = "toolStripAlwaysOnTop";
-            this.toolStripAlwaysOnTop.Text = LanguageManager.Data("toolStripAlwaysOnTop");
+            this.toolStripAlwaysOnTop.Size = new System.Drawing.Size(207, 22);
+            this.toolStripAlwaysOnTop.Text = "Always On Top";
             this.toolStripAlwaysOnTop.Click += new System.EventHandler(this.alwaysOnTopToolStripMenuItem_Click);
             // 
-            // delayBorderlessToolStripMenuItem
+            // toolStripDelayBorderless
             // 
-            resources.ApplyResources(this.toolStripDelayBorderless, "toolStripDelayBorderless");
             this.toolStripDelayBorderless.CheckOnClick = true;
             this.toolStripDelayBorderless.Name = "toolStripDelayBorderless";
-            this.toolStripDelayBorderless.Text = LanguageManager.Data("toolStripDelayBorderless");
+            this.toolStripDelayBorderless.Size = new System.Drawing.Size(207, 22);
+            this.toolStripDelayBorderless.Text = "Delay Borderless Window";
             this.toolStripDelayBorderless.Click += new System.EventHandler(this.delayBorderlessToolStripMenuItem_Click);
             // 
-            // hideMouseCursorToolStripMenuItem
+            // toolStripHideMouseCursor
             // 
-            resources.ApplyResources(this.toolStripHideMouseCursor, "toolStripHideMouseCursor");
             this.toolStripHideMouseCursor.CheckOnClick = true;
             this.toolStripHideMouseCursor.Name = "toolStripHideMouseCursor";
-            this.toolStripHideMouseCursor.Text = LanguageManager.Data("toolStripHideMouseCursor");
+            this.toolStripHideMouseCursor.Size = new System.Drawing.Size(207, 22);
+            this.toolStripHideMouseCursor.Text = "Hide Mouse Cursor";
             this.toolStripHideMouseCursor.Click += new System.EventHandler(this.hideMouseCursorToolStripMenuItem_Click);
             // 
-            // hideWindowsTaskbarToolStripMenuItem
+            // toolStripHideWindowsTaskbar
             // 
-            resources.ApplyResources(this.toolStripHideWindowsTaskbar, "toolStripHideWindowsTaskbar");
             this.toolStripHideWindowsTaskbar.CheckOnClick = true;
             this.toolStripHideWindowsTaskbar.Name = "toolStripHideWindowsTaskbar";
-            this.toolStripHideWindowsTaskbar.Text = LanguageManager.Data("toolStripHideWindowsTaskbar");
+            this.toolStripHideWindowsTaskbar.Size = new System.Drawing.Size(207, 22);
+            this.toolStripHideWindowsTaskbar.Text = "Hide Windows Taskbar";
             this.toolStripHideWindowsTaskbar.Click += new System.EventHandler(this.hideWindowsTaskbarToolStripMenuItem_Click);
             // 
-            // removeMenusToolStripMenuItem
+            // toolStripRemoveMenus
             // 
-            resources.ApplyResources(this.toolStripRemoveMenus, "toolStripRemoveMenus");
             this.toolStripRemoveMenus.CheckOnClick = true;
-            this.toolStripRemoveMenus.Text = LanguageManager.Data("toolStripRemoveMenus");
             this.toolStripRemoveMenus.Name = "toolStripRemoveMenus";
+            this.toolStripRemoveMenus.Size = new System.Drawing.Size(207, 22);
+            this.toolStripRemoveMenus.Text = "Remove Menus";
             this.toolStripRemoveMenus.Click += new System.EventHandler(this.removeMenusToolStripMenuItem_Click);
             // 
             // toolStripMenuItem9
             // 
-            resources.ApplyResources(this.toolStripMenuItem9, "toolStripMenuItem9");
             this.toolStripMenuItem9.Name = "toolStripMenuItem9";
+            this.toolStripMenuItem9.Size = new System.Drawing.Size(204, 6);
             // 
-            // muteInBackgroundToolStripMenuItem
+            // toolStripMuteInBackground
             // 
-            resources.ApplyResources(this.toolStripMuteInBackground, "toolStripMuteInBackground");
             this.toolStripMuteInBackground.CheckOnClick = true;
             this.toolStripMuteInBackground.Name = "toolStripMuteInBackground";
-            this.toolStripMuteInBackground.Text = LanguageManager.Data("toolStripMuteInBackground");
+            this.toolStripMuteInBackground.Size = new System.Drawing.Size(207, 22);
+            this.toolStripMuteInBackground.Text = "Mute In Background";
             this.toolStripMuteInBackground.Click += new System.EventHandler(this.muteInBackgroundToolStripMenuItem_Click);
             // 
-            // contextRemoveFromFavsm
+            // contextRemoveFromFavs
             // 
-            resources.ApplyResources(this.contextRemoveFromFavs, "contextRemoveFromFavs");
             this.contextRemoveFromFavs.Name = "contextRemoveFromFavs";
-            this.contextRemoveFromFavs.Text = LanguageManager.Data("contextRemoveFromFavs");
+            this.contextRemoveFromFavs.Size = new System.Drawing.Size(207, 22);
+            this.contextRemoveFromFavs.Text = "Remove From Favorites";
             this.contextRemoveFromFavs.Click += new System.EventHandler(this.btnRemoveFavorite_Click);
             // 
             // btnRemoveFavorite
             // 
-            resources.ApplyResources(this.btnRemoveFavorite, "btnRemoveFavorite");
-            this.btnRemoveFavorite.Image = global::BorderlessGaming.Properties.Resources.remove;
+            this.btnRemoveFavorite.Image = global::BorderlessGaming.Properties.Resources.Remove;
+            this.btnRemoveFavorite.Location = new System.Drawing.Point(3, 129);
             this.btnRemoveFavorite.Name = "btnRemoveFavorite";
+            this.btnRemoveFavorite.Size = new System.Drawing.Size(37, 36);
+            this.btnRemoveFavorite.TabIndex = 11;
             this.btnRemoveFavorite.UseVisualStyleBackColor = true;
             this.btnRemoveFavorite.Click += new System.EventHandler(this.btnRemoveFavorite_Click);
             this.btnRemoveFavorite.MouseHover += new System.EventHandler(this.btnRemoveFavorite_MouseHover);
             // 
             // processLabel
             // 
-            resources.ApplyResources(this.processLabel, "processLabel");
+            this.processLabel.AutoSize = true;
+            this.processLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.processLabel.Location = new System.Drawing.Point(11, 8);
             this.processLabel.Name = "processLabel";
-            this.processLabel.Text = LanguageManager.Data("processLabel");
+            this.processLabel.Size = new System.Drawing.Size(76, 13);
+            this.processLabel.TabIndex = 20;
+            this.processLabel.Text = "Applications";
             // 
             // favoritesLabel
             // 
-            resources.ApplyResources(this.favoritesLabel, "favoritesLabel");
+            this.favoritesLabel.AutoSize = true;
+            this.favoritesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.favoritesLabel.Location = new System.Drawing.Point(305, 8);
             this.favoritesLabel.Name = "favoritesLabel";
-            this.favoritesLabel.Text = LanguageManager.Data("favoritesLabel");
+            this.favoritesLabel.Size = new System.Drawing.Size(59, 13);
+            this.favoritesLabel.TabIndex = 19;
+            this.favoritesLabel.Text = "Favorites";
             // 
             // trayIcon
             // 
-            resources.ApplyResources(this.trayIcon, "trayIcon");
             this.trayIcon.ContextMenuStrip = this.trayIconContextMenu;
+            this.trayIcon.Icon = global::BorderlessGaming.Properties.Resources.BorderlessGamingLogo;
+            this.trayIcon.Text = "Borderless Gaming";
+            this.trayIcon.Visible = true;
             this.trayIcon.DoubleClick += new System.EventHandler(this.trayIcon_DoubleClick);
             // 
             // trayIconContextMenu
             // 
-            resources.ApplyResources(this.trayIconContextMenu, "trayIconContextMenu");
             this.trayIconContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.openToolStripMenuItem,
             this.toolStripMenuItem7,
             this.exitToolStripMenuItem});
             this.trayIconContextMenu.Name = "trayIconContextMenu";
+            this.trayIconContextMenu.Size = new System.Drawing.Size(196, 54);
             // 
             // openToolStripMenuItem
             // 
-            resources.ApplyResources(this.openToolStripMenuItem, "openToolStripMenuItem");
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.openToolStripMenuItem.Text = "Show";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.trayIcon_DoubleClick);
             // 
             // toolStripMenuItem7
             // 
-            resources.ApplyResources(this.toolStripMenuItem7, "toolStripMenuItem7");
             this.toolStripMenuItem7.Name = "toolStripMenuItem7";
+            this.toolStripMenuItem7.Size = new System.Drawing.Size(192, 6);
             // 
             // exitToolStripMenuItem
             // 
-            resources.ApplyResources(this.exitToolStripMenuItem, "exitToolStripMenuItem");
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.exitToolStripMenuItem.Text = "Exit Borderless Gaming";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // mnuMain
             // 
-            resources.ApplyResources(this.mnuMain, "mnuMain");
             this.mnuMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripOptions,
             this.toolsToolStripMenuItem,
-            this.toolStripInfo,
-             this.rainwayStrip
-            });
+            this.toolStripInfo});
+            this.mnuMain.Location = new System.Drawing.Point(0, 0);
+            this.mnuMain.MinimumSize = new System.Drawing.Size(0, 31);
             this.mnuMain.Name = "mnuMain";
+            this.mnuMain.Size = new System.Drawing.Size(556, 31);
+            this.mnuMain.TabIndex = 16;
+            this.mnuMain.Text = "mnuMain";
             // 
             // toolStripOptions
             // 
-            resources.ApplyResources(this.toolStripOptions, "toolStripOptions");
             this.toolStripOptions.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripRunOnStartup,
             this.toolStripLanguages,
@@ -460,114 +488,119 @@ namespace BorderlessGaming.Forms
             this.toolStripMenuItem10,
             this.toolStripRestoreProcesses});
             this.toolStripOptions.Name = "toolStripOptions";
-            this.toolStripOptions.Text = LanguageManager.Data("toolStripOptions");
+            this.toolStripOptions.Size = new System.Drawing.Size(61, 27);
+            this.toolStripOptions.Text = "&Options";
             // 
-
             // toolStripRunOnStartup
             // 
-            resources.ApplyResources(this.toolStripRunOnStartup, "toolStripRunOnStartup");
             this.toolStripRunOnStartup.CheckOnClick = true;
             this.toolStripRunOnStartup.Name = "toolStripRunOnStartup";
+            this.toolStripRunOnStartup.Size = new System.Drawing.Size(316, 22);
+            this.toolStripRunOnStartup.Text = "Run On Startup";
             this.toolStripRunOnStartup.CheckedChanged += new System.EventHandler(this.toolStripRunOnStartup_CheckChanged);
-            this.toolStripRunOnStartup.Text = LanguageManager.Data("toolStripRunOnStartup");
+            // 
+            // toolStripLanguages
+            // 
+            this.toolStripLanguages.Name = "toolStripLanguages";
+            this.toolStripLanguages.Size = new System.Drawing.Size(316, 22);
+            this.toolStripLanguages.Text = "Select Language";
             // 
             // toolStripCheckForUpdates
             // 
-            resources.ApplyResources(this.toolStripCheckForUpdates, "toolStripCheckForUpdates");
             this.toolStripCheckForUpdates.CheckOnClick = true;
             this.toolStripCheckForUpdates.Name = "toolStripCheckForUpdates";
-            this.toolStripCheckForUpdates.Text = LanguageManager.Data("toolStripCheckForUpdates");
+            this.toolStripCheckForUpdates.Size = new System.Drawing.Size(316, 22);
+            this.toolStripCheckForUpdates.Text = "Check For Updates";
             this.toolStripCheckForUpdates.CheckedChanged += new System.EventHandler(this.toolStripCheckForUpdates_CheckedChanged);
             // 
             // toolStripMenuItem3
             // 
-            resources.ApplyResources(this.toolStripMenuItem3, "toolStripMenuItem3");
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(313, 6);
             // 
             // toolStripGlobalHotkey
             // 
-            resources.ApplyResources(this.toolStripGlobalHotkey, "toolStripGlobalHotkey");
             this.toolStripGlobalHotkey.CheckOnClick = true;
             this.toolStripGlobalHotkey.Name = "toolStripGlobalHotkey";
+            this.toolStripGlobalHotkey.Size = new System.Drawing.Size(316, 22);
+            this.toolStripGlobalHotkey.Text = "Use Global Hotkey                 (Win+F6)";
             this.toolStripGlobalHotkey.CheckedChanged += new System.EventHandler(this.toolStripGlobalHotkey_CheckChanged);
-            this.toolStripGlobalHotkey.Text = LanguageManager.Data("toolStripGlobalHotkey") + " (Win+F6)";
             // 
             // toolStripMouseLock
             // 
-            resources.ApplyResources(this.toolStripMouseLock, "toolStripMouseLock");
             this.toolStripMouseLock.CheckOnClick = true;
             this.toolStripMouseLock.Name = "toolStripMouseLock";
-            this.toolStripMouseLock.Text = LanguageManager.Data("toolStripMouseLock") + " (Scroll Lock)";
+            this.toolStripMouseLock.Size = new System.Drawing.Size(316, 22);
+            this.toolStripMouseLock.Text = "Use Mouse Lock Hotkey       (Scroll Lock)";
             this.toolStripMouseLock.CheckedChanged += new System.EventHandler(this.toolStripMouseLock_CheckChanged);
             // 
-            // useMouseHideHotkeyWinScrollLockToolStripMenuItem
+            // toolStripMouseHide
             // 
-            resources.ApplyResources(this.toolStripMouseHide, "toolStripMouseHide");
             this.toolStripMouseHide.CheckOnClick = true;
-            this.toolStripMouseHide.Text = LanguageManager.Data("toolStripMouseHide") + " (Win+Scroll Lock)";
             this.toolStripMouseHide.Name = "toolStripMouseHide";
+            this.toolStripMouseHide.Size = new System.Drawing.Size(316, 22);
+            this.toolStripMouseHide.Text = "Use Mouse Hide Hotkey       (Win+Scroll Lock)";
             this.toolStripMouseHide.CheckedChanged += new System.EventHandler(this.useMouseHideHotkeyWinScrollLockToolStripMenuItem_CheckChanged);
             // 
             // toolStripMenuItem5
             // 
-            resources.ApplyResources(this.toolStripMenuItem5, "toolStripMenuItem5");
             this.toolStripMenuItem5.Name = "toolStripMenuItem5";
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(313, 6);
             // 
-            // startMinimizedToTrayToolStripMenuItem
+            // toolStripMinimizedToTray
             // 
-            resources.ApplyResources(this.toolStripMinimizedToTray, "toolStripMinimizedToTray");
             this.toolStripMinimizedToTray.CheckOnClick = true;
-            this.toolStripMinimizedToTray.Text = LanguageManager.Data("toolStripMinimizedToTray");
             this.toolStripMinimizedToTray.Name = "toolStripMinimizedToTray";
+            this.toolStripMinimizedToTray.Size = new System.Drawing.Size(316, 22);
+            this.toolStripMinimizedToTray.Text = "Start Minimized To Tray";
             this.toolStripMinimizedToTray.CheckedChanged += new System.EventHandler(this.startMinimizedToTrayToolStripMenuItem_CheckedChanged);
             // 
-            // closeToTrayToolStripMenuItem
+            // toolStripCloseToTray
             // 
-            resources.ApplyResources(this.toolStripCloseToTray, "toolStripCloseToTray");
             this.toolStripCloseToTray.CheckOnClick = true;
-            this.toolStripCloseToTray.Text = LanguageManager.Data("toolStripCloseToTray");
             this.toolStripCloseToTray.Name = "toolStripCloseToTray";
+            this.toolStripCloseToTray.Size = new System.Drawing.Size(316, 22);
+            this.toolStripCloseToTray.Text = "Close To Tray";
             this.toolStripCloseToTray.CheckedChanged += new System.EventHandler(this.closeToTrayToolStripMenuItem_CheckedChanged);
             // 
-            // hideBalloonTipsToolStripMenuItem
+            // toolStripHideBalloonTips
             // 
-            resources.ApplyResources(this.toolStripHideBalloonTips, "toolStripHideBalloonTips");
             this.toolStripHideBalloonTips.CheckOnClick = true;
-            this.toolStripHideBalloonTips.Text = LanguageManager.Data("toolStripHideBalloonTips");
             this.toolStripHideBalloonTips.Name = "toolStripHideBalloonTips";
+            this.toolStripHideBalloonTips.Size = new System.Drawing.Size(316, 22);
+            this.toolStripHideBalloonTips.Text = "Hide Balloon Tips";
             this.toolStripHideBalloonTips.CheckedChanged += new System.EventHandler(this.hideBalloonTipsToolStripMenuItem_CheckedChanged);
             // 
-            // useSlowerWindowDetectionToolStripMenuItem
+            // toolStripSlowWindowDetection
             // 
-            resources.ApplyResources(this.toolStripSlowWindowDetection, "toolStripSlowWindowDetection");
             this.toolStripSlowWindowDetection.CheckOnClick = true;
-            this.toolStripSlowWindowDetection.Text = LanguageManager.Data("toolStripSlowWindowDetection");
             this.toolStripSlowWindowDetection.Name = "toolStripSlowWindowDetection";
+            this.toolStripSlowWindowDetection.Size = new System.Drawing.Size(316, 22);
+            this.toolStripSlowWindowDetection.Text = "&Use Slower Window Detection";
             this.toolStripSlowWindowDetection.Click += new System.EventHandler(this.useSlowerWindowDetectionToolStripMenuItem_Click);
             // 
-            // viewFullProcessDetailsToolStripMenuItem
+            // toolStripViewFullProcessDetails
             // 
-            resources.ApplyResources(this.toolStripViewFullProcessDetails, "toolStripViewFullProcessDetails");
             this.toolStripViewFullProcessDetails.CheckOnClick = true;
-            this.toolStripViewFullProcessDetails.Text = LanguageManager.Data("toolStripViewFullProcessDetails");
             this.toolStripViewFullProcessDetails.Name = "toolStripViewFullProcessDetails";
+            this.toolStripViewFullProcessDetails.Size = new System.Drawing.Size(316, 22);
+            this.toolStripViewFullProcessDetails.Text = "View Full Process Details";
             this.toolStripViewFullProcessDetails.CheckedChanged += new System.EventHandler(this.viewFullProcessDetailsToolStripMenuItem_CheckedChanged);
             // 
             // toolStripMenuItem10
             // 
-            resources.ApplyResources(this.toolStripMenuItem10, "toolStripMenuItem10");
             this.toolStripMenuItem10.Name = "toolStripMenuItem10";
+            this.toolStripMenuItem10.Size = new System.Drawing.Size(313, 6);
             // 
-            // resToolStripMenuItem
+            // toolStripRestoreProcesses
             // 
-            resources.ApplyResources(this.toolStripRestoreProcesses, "toolStripRestoreProcesses");
             this.toolStripRestoreProcesses.Name = "toolStripRestoreProcesses";
-            this.toolStripRestoreProcesses.Text = LanguageManager.Data("toolStripRestoreProcesses");
+            this.toolStripRestoreProcesses.Size = new System.Drawing.Size(316, 22);
+            this.toolStripRestoreProcesses.Text = "Restore All Hidden Applications";
             this.toolStripRestoreProcesses.Click += new System.EventHandler(this.resetHiddenProcessesToolStripMenuItem_Click);
             // 
             // toolsToolStripMenuItem
             // 
-            resources.ApplyResources(this.toolsToolStripMenuItem, "toolsToolStripMenuItem");
             this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripPauseAutomaticProcessing,
             this.toolStripOpenDataFolder,
@@ -577,65 +610,57 @@ namespace BorderlessGaming.Forms
             this.toolStripMenuItem12,
             this.toolStripFullApplicationRefresh});
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
-            this.toolsToolStripMenuItem.Text = LanguageManager.Data("toolsToolStripMenuItem");
+            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(46, 27);
+            this.toolsToolStripMenuItem.Text = "&Tools";
             // 
-            // pauseAutomaticProcessingToolStripMenuItem
+            // toolStripPauseAutomaticProcessing
             // 
-            resources.ApplyResources(this.toolStripPauseAutomaticProcessing, "toolStripPauseAutomaticProcessing");
             this.toolStripPauseAutomaticProcessing.CheckOnClick = true;
-            this.toolStripPauseAutomaticProcessing.Text = LanguageManager.Data("toolStripPauseAutomaticProcessing");
             this.toolStripPauseAutomaticProcessing.Name = "toolStripPauseAutomaticProcessing";
+            this.toolStripPauseAutomaticProcessing.Size = new System.Drawing.Size(250, 22);
+            this.toolStripPauseAutomaticProcessing.Text = "Pause Automatic Processing";
             this.toolStripPauseAutomaticProcessing.Click += new System.EventHandler(this.pauseAutomaticProcessingToolStripMenuItem_Click);
             // 
-            // openDataFolderToolStripMenuItem
+            // toolStripOpenDataFolder
             // 
-            resources.ApplyResources(this.toolStripOpenDataFolder, "toolStripOpenDataFolder");
             this.toolStripOpenDataFolder.Name = "toolStripOpenDataFolder";
-            this.toolStripOpenDataFolder.Text = LanguageManager.Data("toolStripOpenDataFolder");
+            this.toolStripOpenDataFolder.Size = new System.Drawing.Size(250, 22);
+            this.toolStripOpenDataFolder.Text = "Open Data Folder";
             this.toolStripOpenDataFolder.Click += new System.EventHandler(this.openDataFolderToolStripMenuItem_Click);
             // 
             // toolStripMenuItem11
             // 
-            resources.ApplyResources(this.toolStripMenuItem11, "toolStripMenuItem11");
             this.toolStripMenuItem11.Name = "toolStripMenuItem11";
+            this.toolStripMenuItem11.Size = new System.Drawing.Size(247, 6);
             // 
-            // toggleMouseCursorVisibilityToolStripMenuItem
+            // toolStripToggleMouseCursorVisibility
             // 
-            resources.ApplyResources(this.toolStripToggleMouseCursorVisibility, "toolStripToggleMouseCursorVisibility");
             this.toolStripToggleMouseCursorVisibility.Name = "toolStripToggleMouseCursorVisibility";
-            this.toolStripToggleMouseCursorVisibility.Text =
-                LanguageManager.Data("toolStripToggleMouseCursorVisibility");
+            this.toolStripToggleMouseCursorVisibility.Size = new System.Drawing.Size(250, 22);
+            this.toolStripToggleMouseCursorVisibility.Text = "Toggle Mouse Cursor Visibility";
             this.toolStripToggleMouseCursorVisibility.Click += new System.EventHandler(this.toggleMouseCursorVisibilityToolStripMenuItem_Click);
             // 
-            // toggleWindowsTaskbarVisibilityToolStripMenuItem
+            // toolStripToggleWindowsTaskbar
             // 
-            resources.ApplyResources(this.toolStripToggleWindowsTaskbar, "toolStripToggleWindowsTaskbar");
             this.toolStripToggleWindowsTaskbar.Name = "toolStripToggleWindowsTaskbar";
-            this.toolStripToggleWindowsTaskbar.Text =  LanguageManager.Data("toolStripToggleWindowsTaskbar");
+            this.toolStripToggleWindowsTaskbar.Size = new System.Drawing.Size(250, 22);
+            this.toolStripToggleWindowsTaskbar.Text = "Toggle Windows Taskbar Visibility";
             this.toolStripToggleWindowsTaskbar.Click += new System.EventHandler(this.toggleWindowsTaskbarVisibilityToolStripMenuItem_Click);
-            //
-            // rainwayStrip
-            //
-            resources.ApplyResources(this.rainwayStrip, "rainwayStrip");
-            this.rainwayStrip.Text = "Check Out Rainway";
-            this.rainwayStrip.Image = Resources.master_glyph;
-            this.rainwayStrip.Click += new System.EventHandler(this.checkOutRainwayToolStripMenuItem_Click);
             // 
             // toolStripMenuItem12
             // 
-            resources.ApplyResources(this.toolStripMenuItem12, "toolStripMenuItem12");
             this.toolStripMenuItem12.Name = "toolStripMenuItem12";
+            this.toolStripMenuItem12.Size = new System.Drawing.Size(247, 6);
             // 
-            // fullApplicationRefreshToolStripMenuItem
+            // toolStripFullApplicationRefresh
             // 
-            resources.ApplyResources(this.toolStripFullApplicationRefresh, "toolStripFullApplicationRefresh");
             this.toolStripFullApplicationRefresh.Name = "toolStripFullApplicationRefresh";
-            this.toolStripFullApplicationRefresh.Text = LanguageManager.Data("toolStripFullApplicationRefresh");
+            this.toolStripFullApplicationRefresh.Size = new System.Drawing.Size(250, 22);
+            this.toolStripFullApplicationRefresh.Text = "Full Application Refresh";
             this.toolStripFullApplicationRefresh.Click += new System.EventHandler(this.fullApplicationRefreshToolStripMenuItem_Click);
             // 
             // toolStripInfo
             // 
-            resources.ApplyResources(this.toolStripInfo, "toolStripInfo");
             this.toolStripInfo.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripUsageGuide,
             this.toolStripRegexReference,
@@ -645,111 +670,131 @@ namespace BorderlessGaming.Forms
             this.toolStripMenuItem2,
             this.toolStripAbout});
             this.toolStripInfo.Name = "toolStripInfo";
-            this.toolStripInfo.Text =
-                LanguageManager.Data("toolStripInfo");
+            this.toolStripInfo.Size = new System.Drawing.Size(44, 27);
+            this.toolStripInfo.Text = "&Help";
             // 
-            // usageGuideToolStripMenuItem
+            // toolStripUsageGuide
             // 
-            resources.ApplyResources(this.toolStripUsageGuide, "toolStripUsageGuide");
             this.toolStripUsageGuide.Name = "toolStripUsageGuide";
-            this.toolStripUsageGuide.Text = LanguageManager.Data("toolStripUsageGuide");
+            this.toolStripUsageGuide.Size = new System.Drawing.Size(161, 22);
+            this.toolStripUsageGuide.Text = "Usage Guide";
             this.toolStripUsageGuide.Click += new System.EventHandler(this.usageGuideToolStripMenuItem_Click);
             // 
             // toolStripRegexReference
             // 
-            resources.ApplyResources(this.toolStripRegexReference, "toolStripRegexReference");
             this.toolStripRegexReference.Name = "toolStripRegexReference";
-            this.toolStripRegexReference.Text = LanguageManager.Data("toolStripRegexReference");
+            this.toolStripRegexReference.Size = new System.Drawing.Size(161, 22);
+            this.toolStripRegexReference.Text = "Regex Reference";
             this.toolStripRegexReference.Click += new System.EventHandler(this.toolStripRegexReference_Click);
             // 
             // toolStripMenuItem13
             // 
-            resources.ApplyResources(this.toolStripMenuItem13, "toolStripMenuItem13");
             this.toolStripMenuItem13.Name = "toolStripMenuItem13";
+            this.toolStripMenuItem13.Size = new System.Drawing.Size(158, 6);
             // 
             // toolStripReportBug
             // 
-            resources.ApplyResources(this.toolStripReportBug, "toolStripReportBug");
             this.toolStripReportBug.Name = "toolStripReportBug";
-            this.toolStripReportBug.Text = LanguageManager.Data("toolStripReportBug");
+            this.toolStripReportBug.Size = new System.Drawing.Size(161, 22);
+            this.toolStripReportBug.Text = "Report a Bug";
             this.toolStripReportBug.Click += new System.EventHandler(this.toolStripReportBug_Click);
             // 
             // toolStripSupportUs
             // 
-            resources.ApplyResources(this.toolStripSupportUs, "toolStripSupportUs");
             this.toolStripSupportUs.Name = "toolStripSupportUs";
-            this.toolStripSupportUs.Text = LanguageManager.Data("toolStripSupportUs");
+            this.toolStripSupportUs.Size = new System.Drawing.Size(161, 22);
+            this.toolStripSupportUs.Text = "Support Us";
             this.toolStripSupportUs.Click += new System.EventHandler(this.toolStripSupportUs_Click);
             // 
             // toolStripMenuItem2
             // 
-            resources.ApplyResources(this.toolStripMenuItem2, "toolStripMenuItem2");
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(158, 6);
             // 
             // toolStripAbout
             // 
-            resources.ApplyResources(this.toolStripAbout, "toolStripAbout");
             this.toolStripAbout.Name = "toolStripAbout";
-            this.toolStripAbout.Text = LanguageManager.Data("toolStripAbout");
+            this.toolStripAbout.Size = new System.Drawing.Size(161, 22);
+            this.toolStripAbout.Text = "About...";
             this.toolStripAbout.Click += new System.EventHandler(this.toolStripAbout_Click);
             // 
             // tableLayoutPanel1
             // 
-            resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
+            this.tableLayoutPanel1.ColumnCount = 3;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 48F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.processLabel, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.favoritesLabel, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.lstProcesses, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.lstFavorites, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 1, 1);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 31);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.Padding = new System.Windows.Forms.Padding(8);
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(556, 196);
+            this.tableLayoutPanel1.TabIndex = 21;
             // 
             // flowLayoutPanel1
             // 
-            resources.ApplyResources(this.flowLayoutPanel1, "flowLayoutPanel1");
             this.flowLayoutPanel1.Controls.Add(this.addSelectedItem);
-            this.flowLayoutPanel1.Controls.Add(this.btnRemoveFavorite);
             this.flowLayoutPanel1.Controls.Add(this.btnMakeBorderless);
             this.flowLayoutPanel1.Controls.Add(this.btnRestoreWindow);
+            this.flowLayoutPanel1.Controls.Add(this.btnRemoveFavorite);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(257, 21);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(42, 167);
+            this.flowLayoutPanel1.TabIndex = 14;
             // 
             // btnRestoreWindow
             // 
-            resources.ApplyResources(this.btnRestoreWindow, "btnRestoreWindow");
-            this.btnRestoreWindow.Image = global::BorderlessGaming.Properties.Resources.bordered;
+            this.btnRestoreWindow.Image = global::BorderlessGaming.Properties.Resources.Bordered;
+            this.btnRestoreWindow.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnRestoreWindow.Location = new System.Drawing.Point(3, 87);
             this.btnRestoreWindow.Name = "btnRestoreWindow";
+            this.btnRestoreWindow.Size = new System.Drawing.Size(37, 36);
+            this.btnRestoreWindow.TabIndex = 12;
             this.btnRestoreWindow.UseVisualStyleBackColor = true;
             this.btnRestoreWindow.Click += new System.EventHandler(this.btnRestoreWindow_Click);
             this.btnRestoreWindow.MouseHover += new System.EventHandler(this.btnRestoreWindow_MouseHover);
             // 
             // statusStrip1
             // 
-            resources.ApplyResources(this.statusStrip1, "statusStrip1");
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.statusLabel});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 227);
             this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(556, 22);
+            this.statusStrip1.TabIndex = 18;
+            this.statusStrip1.Text = "statusStrip1";
             // 
-            // lblUpdateStatus
+            // statusLabel
             // 
-            resources.ApplyResources(this.statusLabel, "statusLabel");
             this.statusLabel.Name = "statusLabel";
-            this.statusLabel.Text = LanguageManager.Data("statusLabel");
-            // 
-            // toolStripLanguages
-            // 
-            resources.ApplyResources(this.toolStripLanguages, "toolStripLanguages");
-            this.toolStripLanguages.Name = "toolStripLanguages";
-            this.toolStripLanguages.Text = LanguageManager.Data("toolStripLanguages");
+            this.statusLabel.Size = new System.Drawing.Size(59, 17);
+            this.statusLabel.Text = "Loading...";
             // 
             // MainWindow
             // 
-            resources.ApplyResources(this, "$this");
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.statusStrip1);
+            this.ClientSize = new System.Drawing.Size(556, 249);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.mnuMain);
+            this.Icon = global::BorderlessGaming.Properties.Resources.BorderlessGamingLogo;
             this.MainMenuStrip = this.mnuMain;
             this.MaximizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(570, 288);
             this.Name = "MainWindow";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Borderless Gaming";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainWindow_FormClosing);
             this.Load += new System.EventHandler(this.MainWindow_Load);
             this.Shown += new System.EventHandler(this.MainWindow_Shown);
@@ -787,7 +832,6 @@ namespace BorderlessGaming.Forms
         private System.Windows.Forms.ToolStripMenuItem toolStripOptions;
         private System.Windows.Forms.ToolStripMenuItem toolStripRunOnStartup;
         private System.Windows.Forms.ToolStripMenuItem toolStripInfo;
-        private System.Windows.Forms.ToolStripMenuItem rainwayStrip;
         private System.Windows.Forms.ToolStripMenuItem toolStripReportBug;
         private System.Windows.Forms.ToolStripMenuItem toolStripSupportUs;
         private System.Windows.Forms.ToolStripMenuItem toolStripRegexReference;

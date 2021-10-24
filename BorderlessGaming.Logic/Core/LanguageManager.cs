@@ -14,7 +14,6 @@ namespace BorderlessGaming.Logic.Core
 {
     public class LanguageManager
     {
-
         public static string CurrentCulture { get; set; }
 
         private static readonly HashSet<string> CultureNames = CreateCultureNames();
@@ -34,6 +33,72 @@ namespace BorderlessGaming.Logic.Core
             return allNames;
         }
 
+        public static void Translate(Control.ControlCollection controls)
+        {
+            foreach (Control control in controls.OfType<Control>())
+            {
+                Translate(control);
+            }
+        }
+
+        public static void Translate(Control control)
+        {
+            if (control == null)
+            {
+                return;
+            }
+
+            string data = Data(control.Name);
+            if (!string.IsNullOrWhiteSpace(data))
+            {
+                control.Text = data;
+            }
+
+            foreach (Control c in control.Controls)
+            {
+                Translate(c);
+                Translate(c.ContextMenuStrip);
+            }
+
+            ToolStrip toolStrip = control as ToolStrip;
+            if (toolStrip != null)
+            {
+                foreach (ToolStripItem t in toolStrip.Items)
+                {
+                    Translate(t);
+                }
+            }
+        }
+
+        public static void Translate(ContextMenuStrip contextMenuStrip)
+        {
+            if (contextMenuStrip != null)
+            {
+                foreach (ToolStripItem t in contextMenuStrip.Items)
+                {
+                    Translate(t);
+                }
+            }
+        }
+
+        public static void Translate(ToolStripItem toolStripItem)
+        {
+            string data = Data(toolStripItem.Name);
+            if (!string.IsNullOrWhiteSpace(data))
+            {
+                toolStripItem.Text = data;
+            }
+
+            ToolStripMenuItem toolStripMenuItem = toolStripItem as ToolStripMenuItem;
+            if (toolStripMenuItem != null)
+            {
+                foreach (ToolStripItem t in toolStripMenuItem.DropDownItems)
+                {
+                    Translate(t);
+                }
+            }
+        }
+
         private static bool CultureExists(string name)
         {
             return CultureNames.Contains(name);
@@ -46,8 +111,9 @@ namespace BorderlessGaming.Logic.Core
             var data = lang.Data(key);
             if (string.IsNullOrWhiteSpace(data))
             {
-                MessageBox.Show($"{lang.Culture} is missing a translation for {key}");
-                Environment.Exit(0);
+                // TODO log missing translation, instead of closing the application
+                //MessageBox.Show($"{lang.Culture} is missing a translation for {key}");
+                //Environment.Exit(0);
             }
             return data;
         }

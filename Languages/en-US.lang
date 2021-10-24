@@ -71,8 +71,8 @@ toolStripMuteInBackground|Mute In Background
 contextRemoveFromFavs|Remove From Favorites
 # UI
 superSize|SuperSize!
-processLabel|Applications:
-favoritesLabel|Favorites (automatic):
+processLabel|Applications
+favoritesLabel|Favorites
 statusLabel|Loading...
 moreOptionsLabel|Right-click for more options. Last updated
 # Tool Tips
@@ -81,3 +81,5 @@ addFavorite|Adds the currently-selected application to your favorites list (by t
 removeFavorite|Removes the currently-selected favorite from the list.
 makeBorderless|Makes the currently-selected application borderless.
 restoreBorders|Attempts to restore a window back to its bordered state.
+exitToolStripMenuItem|Exit
+openToolStripMenuItem|Open
